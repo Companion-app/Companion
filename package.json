@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/Companion-app/Companion/issues"
   },
-  "homepage": "https://github.com/Companion-app/Companion#readme"
+  "homepage": "https://github.com/Companion-app/Companion#readme",
+  "dependencies": {
+    "@fullcalendar/core": "^4.4.0",
+    "@fullcalendar/daygrid": "^4.4.0"
+  }
 }
