@@ -21,13 +21,13 @@ var db;
 //     });
 // })
 
-MongoClient.connect('mongodb://localhost:27017', function(err, db) {
+MongoClient.connect('mongodb+srv://User1:i4QWO7qACRSlr6r8@companion-okgix.azure.mongodb.net/', function(err, db) {
     if (err) throw err;
     var dbo = db.db("Companion");
     var myobj = [
-      { mood: 'happy'},
-      { mood: 'anxious'},
-      { mood: 'nervous'}
+      { mood: 'defeated'},
+      { mood: 'depressed'},
+      { mood: 'anxious'}
     ];
     dbo.collection("Moods").insertMany(myobj, function(err, res) {
       if (err) throw err;
