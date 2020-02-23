@@ -8,19 +8,19 @@ const hostname = '127.0.0.1';
 const port = 3000;
 
 const app = express();
-var db;
-
-MongoClient.connect('mongodb://localhost:27017', (err, client) => {
-  if (err) return console.log(err);
 
 
-  db = client.db('Companion'); //Sets the database to work with
+// MongoClient.connect('mongodb://localhost:27017', (err, client) => {
+//   if (err) return console.log(err);
 
-  //starts a server
-    app.listen(port, hostname, () =>{ 
-        console.log(`Server running at http://$localhost:$3000/`);
-    });
-})
+
+//   db = client.db('Companion'); //Sets the database to work with
+
+//   //starts a server
+//     app.listen(port, hostname, () =>{ 
+//         console.log(`Server running at http://$localhost:$3000/`);
+//     });
+// })
 
 // localhost:27017
 MongoClient.connect('mongodb+srv://User2:a1QaehxEiQl0xSts@companion-okgix.azure.mongodb.net/', function(err, db) {
