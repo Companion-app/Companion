@@ -1,6 +1,8 @@
 const http = require('http');
 const express = require('./node_modules/express'); //de facto node framework
 const MongoClient = require('./node_modules/mongodb').MongoClient; //database
+const bodyParser= require('body-parser'); //handles reading data from forms
+const hbs = require('hbs'); //templating engine
 const hostname = '127.0.0.1';
 const port = 3000;
 
