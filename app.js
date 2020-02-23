@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
   
       //To pass variables to a view, include an object as a second parameter. Here we pass "result" data. 
       //The view will reference it as "notes"
-      res.render('index.hbs', {moods: result}) //by default, hbs views are placed in a "views" folder. 
+      res.render('add-mood.hbs', {moods: result}) //by default, hbs views are placed in a "views" folder. 
     })
   })
   
