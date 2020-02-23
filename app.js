@@ -10,11 +10,11 @@ const port = 3000;
 const app = express();
 var db;
 
-MongoClient.connect('mongodb://localhost:27017', (err, client) => {
+MongoClient.connect('mongodb+srv://User2:a1QaehxEiQl0xSts@companion-okgix.azure.mongodb.net/', (err, client) => {
   if (err) return console.log(err);
 
+db = client.db('Companion'); //Sets the database to work with
 
-  db = client.db('Companion'); //Sets the database to work with
 
   //starts a server
     app.listen(port, hostname, () =>{ 
@@ -25,6 +25,7 @@ MongoClient.connect('mongodb://localhost:27017', (err, client) => {
 // localhost:27017
 MongoClient.connect('mongodb+srv://User2:a1QaehxEiQl0xSts@companion-okgix.azure.mongodb.net/', function(err, db) {
     if (err) throw err;
+    // db = db.db('Companion')
     var dbo = db.db("Companion");
     // var myobj = [
     //   { mood: 'happy'},
@@ -37,9 +38,9 @@ MongoClient.connect('mongodb+srv://User2:a1QaehxEiQl0xSts@companion-okgix.azure.
     //   db.close();
     // });
 
-    app.listen(port, hostname, () =>{ 
-        console.log(`Server running at http://$localhost:$3000/`);
-    });
+    // app.listen(port, hostname, () =>{ 
+    //     console.log(`Server running at http://$localhost:$3000/`);
+    // });
 
   });
 
