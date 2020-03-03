@@ -45,7 +45,7 @@ app.get('/add-mood', (req, res) => {
 
 //Saves form data and redirects back to home page.
 app.post('/moods', (req, res) => {
-   db.collection('Moods').insertOne(req.body, (err, result) => {
+    db.collection('Moods').insertOne(req.body, (err, result) => {
     // if (err) console.log(err)
 
     console.log('saved to database') //debug console message
