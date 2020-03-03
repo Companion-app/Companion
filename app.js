@@ -2,7 +2,7 @@ const express = require('./node_modules/express'); //de facto node framework
 const bodyParser= require('./node_modules/body-parser'); //handles reading data from forms
 const hbs = require('./node_modules/hbs/lib/hbs'); //templating engine
 const MongoClient = require('./node_modules/mongodb').MongoClient; //database
-
+const assert = require('./node_modules/assert');
 
 const app = express();
 var db;
@@ -45,10 +45,25 @@ app.get('/add-mood', (req, res) => {
 
 //Saves form data and redirects back to home page.
 app.post('/moods', (req, res) => {
-    db.collection('Moods').insertOne(req.body, (err, result) => {
-    if (err) return console.log(err)
+   db.collection('Moods').insertOne(req.body, (err, result) => {
+    // if (err) console.log(err)
 
     console.log('saved to database') //debug console message
     res.redirect('/')
   })
+})
+
+
+app.get('/delete-mood', (req, res) => {
+
+  res.render('delete-mood.hbs'); //by default, hbs views are placed in a "views" folder
+
+  db.collection('Moods').deleteOne({"_id": objectId(id)}, function (err, result) {
+    console.log(objectId(id))
+    if (err) console.log(err)
+
+    console.log('deleted off database') //debug console message
+    res.redirect('/')
+  })
+  
 })
