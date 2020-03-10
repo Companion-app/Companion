@@ -9,7 +9,7 @@
     <ul class="moods">
 		{{#each moods}}
 		<li>
-	  		<div>{{mood}}</div>
+	  		<div>{{mood}} <a href="/confirm-delete-mood/{{_id}}"> Delete</a> <a href="/edit-mood/{{_id}}"> Edit</a></div>
 	  	</li>
 		{{/each}}
   </ul>

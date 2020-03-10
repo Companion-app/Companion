@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Companion app</title>
+</head>
+<body>
+    <h1>Delete a mood</h1>
+    <form action="/delete-mood/{{mood._id}}" method="GET">
+        <p>Are you sure you want to Delete this Mood?</p>
+        <div>{{mood.mood}}</div>
+        <button type="submit">Yes</button>
+    </form>
+</body>
+</html>

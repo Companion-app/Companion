@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Companion app</title>
+</head>
+<body>
+    <h1>Edit a Mood</h1>
+    <form action="/confirm-edit/{{mood._id}}" method="POST">
+        <input type="text" placeholder={{mood.mood}} name="mood">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
