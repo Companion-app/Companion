@@ -23,4 +23,5 @@ class Profile extends React.Component {
     }
 };
 
-ReactDOM.render(<Profile />, document.getElementById('root'));
+export default Profile;
+// ReactDOM.render(<Profile />, document.getElementById('root'));
