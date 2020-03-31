@@ -10,7 +10,7 @@ import {
   withRouter
 } from 'react-router-dom';
 
-// import Profile from "./components/profile";
+import Profile from "./components/profile/profile";
 
 class App extends React.Component{
   render(){  
@@ -28,6 +28,12 @@ return(
             <li>
               <Link to="/users">Users</Link>
             </li>
+            {/* <li>
+            <Link to="/profile">Profile</Link>
+            </li> */}
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
           </ul>
         </nav>
 
@@ -43,6 +49,9 @@ return(
           </Route>
           <Route path="/edit-mood/:id">
             <EditMood {...this.state} />
+          </Route>
+          <Route path="/profile">
+            <Profile />
           </Route>
         </Switch>
       </div>
