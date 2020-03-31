@@ -10,6 +10,8 @@ import {
   withRouter
 } from 'react-router-dom';
 
+// import Profile from "./components/profile";
+
 class App extends React.Component{
   render(){  
 return(
