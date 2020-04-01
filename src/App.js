@@ -11,32 +11,18 @@ import {
 } from 'react-router-dom';
 
 import Profile from "./components/profile/profile";
+import Navbar from "./components/navbar/navbar";
+
+// @import 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css';
+
 
 class App extends React.Component{
   render(){  
 return(
       <Router>
-      <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/mood-list">Mood</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-            {/* <li>
-            <Link to="/profile">Profile</Link>
-            </li> */}
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-          </ul>
-        </nav>
+        <Navbar />
 
+      <div>
         <Switch>
           <Route path="/add-mood">
             <AddMood />
