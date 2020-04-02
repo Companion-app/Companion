@@ -11,10 +11,10 @@ import {
 import Session from 'react-session-api';
 import ReactModal from 'react-modal';
 // import 'bootstrap/dist/css/bootstrap.min.css';
-import Profile from './components/profile/profile.js';
-import MoodList from './components/mood-list/MoodList.js';
-import Register from './components/register/Register.js';
-import LogIn from './components/login/LogIn.js';
+import Profile from '../profile/profile.js';
+import MoodList from '../mood-list/MoodList.js';
+import Register from '../register/Register.js';
+import LogIn from '../login/LogIn.js';
 
 
 ReactModal.setAppElement('#root')
