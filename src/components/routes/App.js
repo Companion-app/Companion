@@ -15,6 +15,7 @@ import Profile from '../profile/profile.js';
 import MoodList from '../mood-list/MoodList.js';
 import Register from '../register/Register.js';
 import LogIn from '../login/LogIn.js';
+import Navbar from '../navbar/navbar.js';
 
 
 ReactModal.setAppElement('#root')
@@ -47,28 +48,18 @@ class App extends React.Component{
 return(
       <Router>
       <div>
-        <nav>
+        <Navbar />
+
+        <div>
           <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/mood-list">Mood</Link>
-            </li>
-            <li>
-              <Link to="/med-list">Meds</Link>
-            </li>
-            <li>
+        <li>
               <Link to="/register">Register</Link>
             </li>
             <li>
               <Link to="/login">Login</Link>
             </li>
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-          </ul>
-        </nav>
+            </ul>
+        </div>
 
         <Switch>
           <Route path="/mood-list">

@@ -1,5 +1,13 @@
-.NavIcon {
-  color: black;
+.Navbar {
+  background-color: #F2F2F2;
+}
+.Navbar .Icon {
+  padding: 15px;
+  border: 5px solid #F2F2F2;
+  text-align: center;
+}
+.Navbar .Icon:active {
+  border-top: 5px solid #FFB74D;
 }
 
 /*# sourceMappingURL=navigation.css.map */

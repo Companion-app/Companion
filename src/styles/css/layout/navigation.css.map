@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../sass/layout/_navigation.scss"],"names":[],"mappings":"AAGA;EACI","file":"navigation.css"}
+{"version":3,"sourceRoot":"","sources":["../../sass/layout/_navigation.scss","../../sass/abstracts/_variables.scss"],"names":[],"mappings":"AAEA;EACI,kBCIS;;ADFT;EACI;EACA;EACA;;AAGJ;EACI","file":"navigation.css"}

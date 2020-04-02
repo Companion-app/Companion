@@ -1,4 +1,15 @@
-.NavIcon {
-    color:black;
-    // width: 100%;
+@import '../abstracts/_variables';
+
+.Navbar {
+    background-color: $base-color;
+
+    .Icon {
+        padding: 15px;
+        border: 5px solid $base-color;
+        text-align: center;
+    }
+
+    .Icon:active {
+        border-top: 5px solid $primary-color;
+    }
 }
