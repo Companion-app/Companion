@@ -66,7 +66,7 @@ class LogIn extends React.Component {
           <p>Password</p>
           <input type="password" placeholder="password" name="password" value={this.state.value} onChange={this.handleChangePassword} />
 
-          <input type="submit" value="Submit"/>
+          <input class="btn-primary-solid" type="submit" value="Submit"/>
         </form>
 
         <p>{this.state.errorMessage}</p>

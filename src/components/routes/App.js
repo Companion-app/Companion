@@ -48,7 +48,6 @@ class App extends React.Component{
 return(
       <Router>
       <div>
-        <Navbar />
 
         <div>
           <ul>
@@ -75,6 +74,8 @@ return(
             <Profile />
           </Route>
         </Switch>
+
+        <Navbar fixed="bottom"/>
       </div>
       </Router>
     )

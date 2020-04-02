@@ -11,7 +11,7 @@ import { FaUserAlt } from 'react-icons/fa';
 // Styling
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col } from 'react-bootstrap';
-import '../../styles/css/layout/navigation.css';
+import '../../styles/css/main.css';
 
 class Navbar extends React.Component {
     constructor(props) {

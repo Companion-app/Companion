@@ -1,4 +1,4 @@
-$font-stack:    Arial, sans-serif;
+// COlOURS
 $primary-color: #FFB74D;
 $sup-color-1: #3387F1;
 $supp-color-2: #3AB3FD;
@@ -6,6 +6,24 @@ $supp-color-3: #57A7F1;
 $supp-color-4: #B8F1FF;
 $supp-color-5: #F25C5C;
 
+$white: #FFFFFF;
 $base-color: #F2F2F2;
 $outline-color: #C6C6C8;
 $text-color: #333333;
+
+// TYPOGRAPHY
+$font-stack: 'Arial Rounded MT Bold', sans-serif;
+
+// COMPONENTS
+// will have to make these % or something else to make them responsive 
+$primary-button-width: 300px;
+$primary-button-height: 50px;
+$primary-button-radius: 30px;
+
+$secondary-button-width: 120px;
+$secondary-button-height: 50px;
+$secondary-button-radius: 10px;
+
+$panel-width: 170px;
+$panel-height: 180px;
+$panel-radius: 25px;

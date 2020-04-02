@@ -1,0 +1,45 @@
+// bootstrap's default font sizing is not far off, but use these classes to override them
+.h--1 {
+    font-size: 2.441em;
+}
+
+.h--2 {
+    font-size: 1.953em;
+}
+
+.h--3 {
+    font-size: 1.563em;
+}
+
+.h--4 {
+    font-size: 1.25em;
+}
+
+.p--default {
+    font-size: 1em;
+}
+
+// fine-print 
+.p--xs {
+    font-size: 0.8em;
+}
+
+body {
+    font-family: $font-stack;
+    margin-left: 8px;
+    margin-right: 8px;
+    // static dimensions for testing iphone 11 (not responsive yet)
+    // pages might have to be standard w & h (nav not sticking to bottom)
+    width: 414px;
+    height: 736px;
+}
+
+// might have to restructure this depending on code * will check back
+.message { 
+    line-height: 34px;
+    letter-spacing: 3%;
+    height: 65px;
+    width: 300px;
+    font-size: 1.95em;
+    text-align: center;
+}

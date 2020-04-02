@@ -146,8 +146,8 @@ class MoodList extends React.Component{
           contentLabel="Confirm delete mood modal">
           <h1>Add a Mood</h1>
           Mood (max 20 characters) <input type="text" onChange={this.onAddChange}/>
-          <button onClick={this.submitAdd}>Add</button>
-          <button onClick={this.handleCloseAddModal}>Cancel</button>
+          <button class="btn-secondary-default" onClick={this.submitAdd}>Add</button>
+          <button class="btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</button>
         </ReactModal>
       }
       else if(this.state.showEditModal) {
@@ -157,8 +157,8 @@ class MoodList extends React.Component{
           contentLabel="Confirm delete mood modal">
           <h1>Edit a Mood</h1>
           Mood (max 20 characters) <input type="text" onChange={this.onEditChange}/>
-          <button onClick={this.submitEdit}>Edit</button>
-          <button onClick={this.handleCloseEditModal}>Cancel</button>
+          <button class="btn-secondary-default" onClick={this.submitEdit}>Edit</button>
+          <button class="btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</button>
         </ReactModal>
       }
       else if(this.state.showDeleteModal) {
@@ -167,8 +167,8 @@ class MoodList extends React.Component{
           isOpen={this.state.showDeleteModal}
           contentLabel="Confirm delete mood modal">
           <p>Are you sure you want to delete {this.state.moodSelected}?</p>
-          <button onClick={this.submitConfirmDelete}>Accept</button>
-          <button onClick={this.handleCloseDeleteModal}>Cancel</button>
+          <button class="btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</button>
+          <button class="btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</button>
         </ReactModal>
       }
       return (
@@ -178,7 +178,7 @@ class MoodList extends React.Component{
           <ul>
             {moodList}
           </ul>
-          <button onClick={this.handleOpenAddModal}>Add Mood</button>
+          <button class="btn-primary-solid" onClick={this.handleOpenAddModal}>Add Mood</button>
         </div>
       )
     }
