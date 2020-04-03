@@ -8,6 +8,16 @@
     border-radius: $primary-button-radius;
 }
 
+.btn-primary-solid-alt {
+    @include primary-button-size($primary-button-width, $primary-button-height);
+    background-color: $sup-color-1;
+    border: 3px solid $sup-color-1;
+    color: $white;
+    box-shadow: 4px 4px 4px $outline-color;
+    margin: 6px;
+    border-radius: $primary-button-radius;
+}
+
 .btn-primary-outline {
     @include primary-button-size($primary-button-width, $primary-button-height);
     background-color: $white;

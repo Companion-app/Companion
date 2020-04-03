@@ -48,17 +48,19 @@ class App extends React.Component{
 return(
       <Router>
       <div>
+          {/* Register */}
+          {/* <button class="btn-primary-solid" onClick={this.Register}>Register</button>  */}
+          {/* Login */}
+          {/* <button class="btn-primary-solid-alt" onClick={this.Register}>Login</button> */}
 
-        <div>
-          <ul>
-        <li>
-              <Link to="/register">Register</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            </ul>
-        </div>
+          {/* Replace these buttons with above, paths need to be fixed */}
+          <button class="btn-primary-solid">
+            <Link to="/register">Register</Link>
+          </button>
+          <button class="btn-primary-solid"> 
+            <Link to="/login">Login</Link>
+          </button>
+
 
         <Switch>
           <Route path="/mood-list">

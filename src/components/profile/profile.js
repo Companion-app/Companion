@@ -7,13 +7,13 @@ class Profile extends React.Component {
     render() {
 
         return (
-            <div className="UserInfo">
-                <h1 className="FullName">Jane Doe</h1>
-                <p className="Dob">January 1 2000</p>
-                <div className="Diagnoses">
+            <div className=" ">
+                <h1 className=" ">Jane Doe</h1>
+                <p className=" ">January 1 2000</p>
+                <div className=" ">
                     <h1>Diagnoses</h1>
                     <ul>
-                        <li>Despression</li>
+                        <li>Depression</li>
                         <li>Bipolar</li>
                     </ul>
                 </div>

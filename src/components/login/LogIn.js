@@ -61,10 +61,10 @@ class LogIn extends React.Component {
         <h1>Welcome Back!</h1>
         <form onSubmit={this.handleSubmit}>
           <p>Email</p>
-          <input type="email" placeholder="email@email.com" name="email" value={this.state.value} onChange={this.handleChangeEmail} />
+          <input class="input-default" type="email" placeholder="email@email.com" name="email" value={this.state.value} onChange={this.handleChangeEmail} />
 
           <p>Password</p>
-          <input type="password" placeholder="password" name="password" value={this.state.value} onChange={this.handleChangePassword} />
+          <input class="input-default" type="password" placeholder="password" name="password" value={this.state.value} onChange={this.handleChangePassword} />
 
           <input class="btn-primary-solid" type="submit" value="Submit"/>
         </form>

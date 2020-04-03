@@ -145,7 +145,7 @@ class MoodList extends React.Component{
           isOpen={this.state.showAddModal}
           contentLabel="Confirm delete mood modal">
           <h1>Add a Mood</h1>
-          Mood (max 20 characters) <input type="text" onChange={this.onAddChange}/>
+          Mood (max 20 characters) <input class="input-default" type="text" onChange={this.onAddChange}/>
           <button class="btn-secondary-default" onClick={this.submitAdd}>Add</button>
           <button class="btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</button>
         </ReactModal>
@@ -156,7 +156,7 @@ class MoodList extends React.Component{
           isOpen={this.state.showEditModal}
           contentLabel="Confirm delete mood modal">
           <h1>Edit a Mood</h1>
-          Mood (max 20 characters) <input type="text" onChange={this.onEditChange}/>
+          Mood (max 20 characters) <input class="input-default" type="text" onChange={this.onEditChange}/>
           <button class="btn-secondary-default" onClick={this.submitEdit}>Edit</button>
           <button class="btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</button>
         </ReactModal>
