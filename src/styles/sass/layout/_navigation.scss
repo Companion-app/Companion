@@ -1,8 +1,11 @@
-@import '../abstracts/_variables.scss';
+// @import '../abstracts/_variables.scss';
 
 .Navbar {
     background-color: $base-color;
     box-shadow: 0px -1px 4px $outline-color;
+    // left: 0;
+    bottom: 0;
+    position: fixed;
 
     .Icon {
         padding: 15px;

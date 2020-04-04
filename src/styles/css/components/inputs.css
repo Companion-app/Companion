@@ -1,17 +1,21 @@
-/* Error: Undefined variable.
- *   ,
- * 2 |     width: $textarea-default-width; 
- *   |            ^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   src/styles/sass/components/_inputs.scss 2:12  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 2 \2502      width: $textarea-default-width; \a   \2502             ^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src/styles/sass/components/_inputs.scss 2:12  root stylesheet";
+label {
+  margin: 7px;
 }
+
+.textarea-default {
+  width: 300px;
+  height: 115px;
+  border: 3px solid #EDF5FD;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.input-default {
+  width: 300px;
+  height: 50px;
+  border: 3px solid #EDF5FD;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=inputs.css.map */

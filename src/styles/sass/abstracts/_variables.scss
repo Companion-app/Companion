@@ -17,9 +17,13 @@ $font-stack: 'Arial Rounded MT Bold', sans-serif;
 
 // COMPONENTS
 // will have to make these % or something else to make them responsive 
-$primary-button-width: 300px;
-$primary-button-height: 50px;
+$primary-button-width: 60vw;
+$primary-button-height: 10vw;
 $primary-button-radius: 30px;
+
+// $primary-button-width: 300px;
+// $primary-button-height: 50px;
+// $primary-button-radius: 30px;
 
 $secondary-button-width: 120px;
 $secondary-button-height: 50px;
@@ -34,3 +38,5 @@ $textarea-default-height: 115px;
 
 $input-default-width: 300px;
 $input-default-height: 50px;
+
+

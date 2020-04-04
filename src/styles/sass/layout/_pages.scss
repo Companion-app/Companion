@@ -1,0 +1,9 @@
+body { 
+    background-color: $base-color;
+}
+
+// still unsure about this method
+.page-constraint {
+    max-height: 736px;
+    position: relative;
+}

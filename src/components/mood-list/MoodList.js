@@ -3,6 +3,12 @@ import axios from 'axios';
 import Session from 'react-session-api';
 import ReactModal from 'react-modal';
 
+// Styling
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import '../../styles/css/main.css';
+
+
 
 class MoodList extends React.Component{
     constructor(){
@@ -135,8 +141,8 @@ class MoodList extends React.Component{
       let moodList = moods.map((mood) =>
         <li key={i++}>
           {mood}
-          <button onClick={() => {this.handleOpenEditModal(mood)}}>Edit</button>
-          <button onClick={() => {this.handleOpenDeleteModal(mood)}}>Delete</button>
+          <Button onClick={() => {this.handleOpenEditModal(mood)}}>Edit</Button>
+          <Button onClick={() => {this.handleOpenDeleteModal(mood)}}>Delete</Button>
         </li>)
       let modal;
       if(this.state.showAddModal) {
@@ -145,9 +151,12 @@ class MoodList extends React.Component{
           isOpen={this.state.showAddModal}
           contentLabel="Confirm delete mood modal">
           <h1>Add a Mood</h1>
-          Mood (max 20 characters) <input class="input-default" type="text" onChange={this.onAddChange}/>
-          <button class="btn-secondary-default" onClick={this.submitAdd}>Add</button>
-          <button class="btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</button>
+
+          <label for="add-mood">Mood (max 20 characters) </label>
+          <input class="input-default" type="text" name="add-mood" onChange={this.onAddChange}/>
+          <Button className="btn-secondary-default" onClick={this.submitAdd}>Add</Button>
+          <Button className="btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</Button>
+
         </ReactModal>
       }
       else if(this.state.showEditModal) {
@@ -156,9 +165,10 @@ class MoodList extends React.Component{
           isOpen={this.state.showEditModal}
           contentLabel="Confirm delete mood modal">
           <h1>Edit a Mood</h1>
-          Mood (max 20 characters) <input class="input-default" type="text" onChange={this.onEditChange}/>
-          <button class="btn-secondary-default" onClick={this.submitEdit}>Edit</button>
-          <button class="btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</button>
+          <label for="edit-mood">Mood (max 20 characters) </label>
+          <input class="input-default" type="text" name="edit-mood" onChange={this.onEditChange}/>
+          <Button className="btn-secondary-default" onClick={this.submitEdit}>Edit</Button>
+          <Button className="btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</Button>
         </ReactModal>
       }
       else if(this.state.showDeleteModal) {
@@ -167,8 +177,8 @@ class MoodList extends React.Component{
           isOpen={this.state.showDeleteModal}
           contentLabel="Confirm delete mood modal">
           <p>Are you sure you want to delete {this.state.moodSelected}?</p>
-          <button class="btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</button>
-          <button class="btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</button>
+          <Button className="btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
+          <Button className="btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</Button>
         </ReactModal>
       }
       return (
@@ -178,7 +188,7 @@ class MoodList extends React.Component{
           <ul>
             {moodList}
           </ul>
-          <button class="btn-primary-solid" onClick={this.handleOpenAddModal}>Add Mood</button>
+          <Button className="btn-primary-solid" onClick={this.handleOpenAddModal}>Add Mood</Button>
         </div>
       )
     }

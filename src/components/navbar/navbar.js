@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 // https://react-icons.netlify.com/#/
 import { IconContext } from 'react-icons';
 import { AiTwotoneHome } from 'react-icons/ai';
-import { FaSmile } from 'react-icons/fa';
-import { FaPills } from 'react-icons/fa';
-import { FaUserAlt } from 'react-icons/fa';
+import { FaSmile, FaPills, FaUserAlt } from 'react-icons/fa';
 
 // Styling
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -23,7 +21,7 @@ class Navbar extends React.Component {
 
             <Container className="Navbar">
                 {/* Use of IconContext to style all at once, instead of each icon individually. 
-                If we want to override one icon, simlply change it in the icon element 
+                If we want to override one icon, simply change it in the icon element 
                 https://www.youtube.com/watch?v=4l0nsK4ezNc*/}
                 <IconContext.Provider value={{size: '2rem', color: 'black'}}> 
                     <Row>

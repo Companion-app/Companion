@@ -3,6 +3,11 @@ import axios from 'axios';
 import Session from 'react-session-api';
 import { Redirect } from 'react-router-dom';
 
+// Styling
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import '../../styles/css/main.css';
+
 
 class LogIn extends React.Component {
     constructor() {
@@ -61,12 +66,16 @@ class LogIn extends React.Component {
         <h1>Welcome Back!</h1>
         <form onSubmit={this.handleSubmit}>
           <p>Email</p>
-          <input class="input-default" type="email" placeholder="email@email.com" name="email" value={this.state.value} onChange={this.handleChangeEmail} />
+          <input className="input-default" type="email" placeholder="email@email.com" name="email" value={this.state.value} onChange={this.handleChangeEmail} />
 
           <p>Password</p>
-          <input class="input-default" type="password" placeholder="password" name="password" value={this.state.value} onChange={this.handleChangePassword} />
+          <input className="input-default" type="password" placeholder="password" name="password" value={this.state.value} onChange={this.handleChangePassword} />
 
-          <input class="btn-primary-solid" type="submit" value="Submit"/>
+          <input className="btn-primary-solid" type="submit" value="Submit"/>
+
+          {/* padding is off on buttons when they are submit */}
+          {/* <Button className="btn-primary-solid" as="submit" value="Submit">Submit</Button> */}
+
         </form>
 
         <p>{this.state.errorMessage}</p>

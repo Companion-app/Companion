@@ -1,5 +1,10 @@
 import React from 'react';
 
+// https://react-icons.netlify.com/#/
+import { IconContext } from 'react-icons';
+import { FaBirthdayCake } from 'react-icons/fa';
+
+
 class Profile extends React.Component {
     constructor(props) {
         super(props);
@@ -7,17 +12,22 @@ class Profile extends React.Component {
     render() {
 
         return (
-            <div className=" ">
+
+            // to consider: edit button
+            <IconContext.Provider value={{size: '.8rem', color: 'black'}}> 
+            <div className="box-info">
                 <h1 className=" ">Jane Doe</h1>
-                <p className=" ">January 1 2000</p>
+                <p className=" "><FaBirthdayCake />  Birthday: January 1 2000</p>
                 <div className=" ">
-                    <h1>Diagnoses</h1>
+                    <h2>Diagnoses</h2>
                     <ul>
                         <li>Depression</li>
                         <li>Bipolar</li>
                     </ul>
                 </div>
             </div>
+            </IconContext.Provider>
+
         );
 
     }

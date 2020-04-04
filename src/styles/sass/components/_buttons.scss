@@ -1,3 +1,5 @@
+@import '../abstracts/_variables.scss';
+
 .btn-primary-solid {
     @include primary-button-size($primary-button-width, $primary-button-height);
     background-color: $primary-color;
@@ -6,6 +8,9 @@
     box-shadow: 4px 4px 4px $outline-color;
     margin: 6px;
     border-radius: $primary-button-radius;
+    padding:3px;
+    text-align: center;
+    // font-size: 100%;
 }
 
 .btn-primary-solid-alt {
@@ -16,6 +21,8 @@
     box-shadow: 4px 4px 4px $outline-color;
     margin: 6px;
     border-radius: $primary-button-radius;
+    padding:3px;
+    text-align: center;
 }
 
 .btn-primary-outline {
@@ -36,6 +43,8 @@
     box-shadow: 4px 4px 4px $outline-color;
     margin: 6px;
     border-radius: $secondary-button-radius;
+    padding:3px;
+
 }
 
 .btn-secondary-alert {
@@ -46,6 +55,7 @@
     box-shadow: 4px 0px 4px $outline-color;
     margin: 6px;
     border-radius: $secondary-button-radius;
+    padding:3px;
 }
 
 .panel {
@@ -56,6 +66,7 @@
     box-shadow: 4px 2px 2px $outline-color;
     margin: 6px;
     border-radius: $panel-radius;
+    padding:3px;
     text-align: center;
     // TBD make the text align on the bottom
     // text-decoration: none;

@@ -47,7 +47,7 @@ class Register extends React.Component {
               <label for="email">Email</label>
             </div>
             <div>
-              <input class="input-default" type="email" placeholder="email@email.com" name="email" value={this.state.value} onChange={this.handleChangeEmail} />
+              <input className="input-default" type="email" placeholder="email@email.com" name="email" value={this.state.value} onChange={this.handleChangeEmail} />
             </div>
           </div>
 
@@ -56,10 +56,10 @@ class Register extends React.Component {
               <label for="password">Password</label>
             </div>
             <div>
-              <input class="input-default" type="password" placeholder="password" name="password" value={this.state.value} onChange={this.handleChangePassword} />
+              <input className="input-default" type="password" placeholder="password" name="password" value={this.state.value} onChange={this.handleChangePassword} />
             </div>
           </div>
-          <input class="btn-primary-solid" type="submit" value="Submit"/>
+          <input className="btn-primary-solid" type="submit" value="Submit"/>
         </form>
       </div>
   

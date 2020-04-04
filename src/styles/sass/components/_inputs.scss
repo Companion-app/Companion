@@ -1,3 +1,9 @@
+@import '../abstracts/_variables.scss';
+
+label {
+    margin:7px;
+}
+
 .textarea-default {
     width: $textarea-default-width; 
     height: $textarea-default-height; 

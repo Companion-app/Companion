@@ -10,12 +10,16 @@ import {
 } from 'react-router-dom';
 import Session from 'react-session-api';
 import ReactModal from 'react-modal';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import Profile from '../profile/profile.js';
 import MoodList from '../mood-list/MoodList.js';
 import Register from '../register/Register.js';
 import LogIn from '../login/LogIn.js';
 import Navbar from '../navbar/navbar.js';
+
+// Styling
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container, Row, Col, Button } from 'react-bootstrap';
+import '../../styles/css/main.css';
 
 
 ReactModal.setAppElement('#root')
@@ -47,17 +51,17 @@ class App extends React.Component{
     }
 return(
       <Router>
-      <div>
-          {/* Register */}
-          {/* <button class="btn-primary-solid" onClick={this.Register}>Register</button>  */}
-          {/* Login */}
-          {/* <button class="btn-primary-solid-alt" onClick={this.Register}>Login</button> */}
+      <div className="page-constraint">
+
+          {/* <Button className="btn-primary-solid" onClick={this.Register}>Register</Button>
+          <Button className="btn-primary-solid-alt" onClick={this.Login}>Login</Button> */}
 
           {/* Replace these buttons with above, paths need to be fixed */}
-          <button class="btn-primary-solid">
+          
+          <button className="btn-primary-solid">
             <Link to="/register">Register</Link>
           </button>
-          <button class="btn-primary-solid"> 
+          <button className="btn-primary-solid"> 
             <Link to="/login">Login</Link>
           </button>
 
