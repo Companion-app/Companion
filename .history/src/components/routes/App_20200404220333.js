@@ -80,9 +80,6 @@ return(
           <Route path="/profile">
             <Profile />
           </Route>
-          <Route path="/med-list">
-            <MedList />
-          </Route>
         </Switch>
 
         <Navbar fixed="bottom"/>

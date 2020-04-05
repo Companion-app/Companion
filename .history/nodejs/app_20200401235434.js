@@ -26,7 +26,7 @@ app.listen(5000, () => {
   console.log('listening on port 5000')
 })
 
-/* ========== USERS ========== */
+/* USERS */
 app.get('/get-user/:id', (req, res) => {
   db.collection('UserDetails').findOne({
     '_id': ObjectId(req.params.id)
@@ -77,7 +77,7 @@ app.post('/login', (req, res) => {
   });
 });
 
-/* ========== MOODS ========== */
+/* MOODS */
 app.get('/get-moods', (req, res) => {
   const result = db.collection('UserDetails').findOne(
     {'_id': ObjectId(req.query.id)},
@@ -116,61 +116,16 @@ app.post('/delete-mood', (req, res) => {
   })
 })
 
+//Saves form data and redirects back to home page.
 app.put('/edit-mood', (req, res) => {
   db.collection('UserDetails').updateOne({_id:ObjectId(req.body.userId)}, {$rename: {[`moods.${req.body.oldMood}`]: `moods.${req.body.newMood}`}})
   console.log('updated database')
   res.sendStatus(200)
 })
 
-/* ========== MEDS ========== */
-
-app.get('/get-meds', (req, res) => {
-  const result = db.collection('UserDetails').findOne(
-    {'_id': ObjectId(req.query.id)},
-    function(err, result){
-      console.log(result)
-      res.json({meds: result['meds']});
-
-    }
-  )
-})
-
-app.post('/add-med', (req, res)=>{
-  db.collection('UserDetails').updateOne(
-    {'_id': ObjectId(req.body.id)},
-    {
-      $inc: {
-        [`meds.${req.body.med}.counter`]: 1
-      }
-    },
-    (err, result) => {
-    if (err) res.sendStatus(500)
-    console.log('saved to database: ', req.body)
-    res.sendStatus(200)
-  })
-})
-
-app.post('/delete-med', (req, res) => {
-  console.log(req.body)
-  db.collection('UserDetails').updateOne({
-    _id:ObjectId(req.body.id)},
-    {$unset: {[`meds.${req.body.med}`] : {}}},
-    function (err, result) {
-      if (err) res.sendStatus(500)
-      console.log('deleted off database')
-      res.sendStatus(200)
-  })
-})
-
-app.put('/edit-med', (req, res) => {
-  db.collection('UserDetails').updateOne({_id:ObjectId(req.body.userId)}, {$rename: {[`meds.${req.body.oldMed}`]: `meds.${req.body.newMed}`}})
-  console.log('updated database')
-  res.sendStatus(200)
-})
-
-
-
-/* ========== LogEntries ========== */
+/*
+  LogEntries
+*/
 app.post('/add-logentry', (req, res) => {
   var date = new Date()
   db.collection('LogEntries').insertOne({

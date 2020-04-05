@@ -124,23 +124,23 @@ app.put('/edit-mood', (req, res) => {
 
 /* ========== MEDS ========== */
 
-app.get('/get-meds', (req, res) => {
+app.get('/get-moods', (req, res) => {
   const result = db.collection('UserDetails').findOne(
     {'_id': ObjectId(req.query.id)},
     function(err, result){
       console.log(result)
-      res.json({meds: result['meds']});
+      res.json({moods: result['moods']});
 
     }
   )
 })
 
-app.post('/add-med', (req, res)=>{
+app.post('/add-mood', (req, res)=>{
   db.collection('UserDetails').updateOne(
     {'_id': ObjectId(req.body.id)},
     {
       $inc: {
-        [`meds.${req.body.med}.counter`]: 1
+        [`moods.${req.body.mood}.counter`]: 1
       }
     },
     (err, result) => {
@@ -150,11 +150,11 @@ app.post('/add-med', (req, res)=>{
   })
 })
 
-app.post('/delete-med', (req, res) => {
+app.post('/delete-mood', (req, res) => {
   console.log(req.body)
   db.collection('UserDetails').updateOne({
     _id:ObjectId(req.body.id)},
-    {$unset: {[`meds.${req.body.med}`] : {}}},
+    {$unset: {[`moods.${req.body.mood}`] : {}}},
     function (err, result) {
       if (err) res.sendStatus(500)
       console.log('deleted off database')
@@ -162,8 +162,8 @@ app.post('/delete-med', (req, res) => {
   })
 })
 
-app.put('/edit-med', (req, res) => {
-  db.collection('UserDetails').updateOne({_id:ObjectId(req.body.userId)}, {$rename: {[`meds.${req.body.oldMed}`]: `meds.${req.body.newMed}`}})
+app.put('/edit-mood', (req, res) => {
+  db.collection('UserDetails').updateOne({_id:ObjectId(req.body.userId)}, {$rename: {[`moods.${req.body.oldMood}`]: `moods.${req.body.newMood}`}})
   console.log('updated database')
   res.sendStatus(200)
 })

@@ -12,7 +12,6 @@ import Session from 'react-session-api';
 import ReactModal from 'react-modal';
 import Profile from '../profile/profile.js';
 import MoodList from '../mood-list/MoodList.js';
-import MedList from '../med-list/MedList.js';
 import Register from '../register/Register.js';
 import LogIn from '../login/LogIn.js';
 import Navbar from '../navbar/navbar.js';
@@ -79,9 +78,6 @@ return(
           </Route>
           <Route path="/profile">
             <Profile />
-          </Route>
-          <Route path="/med-list">
-            <MedList />
           </Route>
         </Switch>
 
