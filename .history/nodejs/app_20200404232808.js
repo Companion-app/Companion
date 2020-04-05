@@ -156,6 +156,7 @@ app.get('/get-meds', (req, res) => {
 
 app.post('/add-med', (req, res)=>{
   console.log(req.body)
+  console.log(meds.req.body)
 
   db.collection('UserDetails').updateOne(
     {'_id': ObjectId(req.body.id)},
@@ -168,7 +169,6 @@ app.post('/add-med', (req, res)=>{
     },
     (err, result) => {
     if (err) {
-      console.log(err)
       res.sendStatus(500)
       return
     }

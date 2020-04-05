@@ -114,7 +114,7 @@ class MedList extends React.Component{
           showAddModal: false,
           meds: {
             ...prevState.meds,
-            [this.state.addValue]: this.state.notesValue
+            [this.state.addValue]: {}
           }
         }))
       })
@@ -158,7 +158,7 @@ class MedList extends React.Component{
       let medList = meds.map((med) =>
         <li key={i++}>
           {med}
-          {this.state.meds[med]}
+          {med.value}
           <Button onClick={() => {this.handleOpenEditModal(med)}}>Edit</Button>
           <Button onClick={() => {this.handleOpenDeleteModal(med)}}>Delete</Button>
         </li>)

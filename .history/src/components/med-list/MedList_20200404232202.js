@@ -43,13 +43,7 @@ class MedList extends React.Component{
         axios.get('http://localhost:5000/get-meds', {
           params: { id: this.state.userSession['id'] },
           withCredentials: true
-
-        }).then(res => {
-          console.log(res)
-          this.setState({ 
-            meds: res.data.meds 
-          })
-        })
+        }).then(res => this.setState({ meds: res.data.meds }))
       }
     }
   
@@ -114,7 +108,7 @@ class MedList extends React.Component{
           showAddModal: false,
           meds: {
             ...prevState.meds,
-            [this.state.addValue]: this.state.notesValue
+            [this.state.addValue]: {}
           }
         }))
       })
@@ -151,14 +145,12 @@ class MedList extends React.Component{
     render(){
       let i =0
       let meds = []
-      console.log(this.state.meds)
       for(let med in this.state.meds) {
         meds.push(med)
       }
       let medList = meds.map((med) =>
         <li key={i++}>
           {med}
-          {this.state.meds[med]}
           <Button onClick={() => {this.handleOpenEditModal(med)}}>Edit</Button>
           <Button onClick={() => {this.handleOpenDeleteModal(med)}}>Delete</Button>
         </li>)

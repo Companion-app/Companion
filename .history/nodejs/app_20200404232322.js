@@ -156,19 +156,17 @@ app.get('/get-meds', (req, res) => {
 
 app.post('/add-med', (req, res)=>{
   console.log(req.body)
-
+  console.log(req.body.notes)
   db.collection('UserDetails').updateOne(
     {'_id': ObjectId(req.body.id)},
-    { $set: {
-      [`meds.${req.body.med}`] : req.body.notes
-    }
+    {
+      [`meds.${req.body.mood}`] : req.body.notes
       // $inc: {
       //   [`meds.${req.body.med}.counter`]: 1
       // }
     },
     (err, result) => {
     if (err) {
-      console.log(err)
       res.sendStatus(500)
       return
     }

@@ -114,7 +114,7 @@ class MedList extends React.Component{
           showAddModal: false,
           meds: {
             ...prevState.meds,
-            [this.state.addValue]: this.state.notesValue
+            [this.state.addValue]: {}
           }
         }))
       })

@@ -15,7 +15,6 @@ import MoodList from '../mood-list/MoodList.js';
 import MedList from '../med-list/MedList.js';
 import Register from '../register/Register.js';
 import LogIn from '../login/LogIn.js';
-import Logout from '../logout/Logout.js';
 import Navbar from '../navbar/navbar.js';
 
 // Styling

@@ -114,10 +114,7 @@ app.post('/add-mood', (req, res)=>{
       }
     },
     (err, result) => {
-    if (err) {
-      res.sendStatus(500)
-      return
-    }
+    if (err) res.sendStatus(500)
     console.log('saved to database: ', req.body)
     res.sendStatus(200)
   })
@@ -155,20 +152,13 @@ app.get('/get-meds', (req, res) => {
 })
 
 app.post('/add-med', (req, res)=>{
-  console.log(req.body)
-
   db.collection('UserDetails').updateOne(
     {'_id': ObjectId(req.body.id)},
-    { $set: {
-      [`meds.${req.body.med}`] : req.body.notes
-    }
-      // $inc: {
-      //   [`meds.${req.body.med}.counter`]: 1
-      // }
+    {
+      [`meds.${req.body.med}.notes`]: {${req.body.notes}}
     },
     (err, result) => {
     if (err) {
-      console.log(err)
       res.sendStatus(500)
       return
     }

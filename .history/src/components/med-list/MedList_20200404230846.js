@@ -21,11 +21,9 @@ class MedList extends React.Component{
         showDeleteModal: false,
         medSelected: '',
         editValue: '',
-        addValue: '',
-        notesValue: ''
+        addValue: ''
       }
       this.onAddChange = this.onAddChange.bind(this);
-      this.onNotesAddChange = this.onNotesAddChange.bind(this);
       this.onEditChange = this.onEditChange.bind(this);
       this.submitAdd = this.submitAdd.bind(this);
       this.submitEdit = this.submitEdit.bind(this);
@@ -43,13 +41,7 @@ class MedList extends React.Component{
         axios.get('http://localhost:5000/get-meds', {
           params: { id: this.state.userSession['id'] },
           withCredentials: true
-
-        }).then(res => {
-          console.log(res)
-          this.setState({ 
-            meds: res.data.meds 
-          })
-        })
+        }).then(res => this.setState({ meds: res.data.meds }))
       }
     }
   
@@ -90,12 +82,6 @@ class MedList extends React.Component{
         addValue: e.target.value
       })
     }
-
-    onNotesAddChange(e){
-      this.setState({
-        notesValue: e.target.value
-      })
-    }
   
     onEditChange(e) {
       this.setState({
@@ -104,8 +90,8 @@ class MedList extends React.Component{
     }
   
     submitAdd() {
-      axios.post('http://localhost:5000/add-med', 
-      {id: this.state.userSession['id'], med: this.state.addValue, notes: this.state.notesValue},
+      axios.post('http://localhost:5000/add-mesd', 
+      {id: this.state.userSession['id'], med: this.state.addValue},
       {withCredentials: true})
       .then(res => {
         let updatedMeds = this.state.meds;
@@ -114,7 +100,7 @@ class MedList extends React.Component{
           showAddModal: false,
           meds: {
             ...prevState.meds,
-            [this.state.addValue]: this.state.notesValue
+            [this.state.addValue]: {}
           }
         }))
       })
@@ -151,14 +137,12 @@ class MedList extends React.Component{
     render(){
       let i =0
       let meds = []
-      console.log(this.state.meds)
       for(let med in this.state.meds) {
         meds.push(med)
       }
       let medList = meds.map((med) =>
         <li key={i++}>
           {med}
-          {this.state.meds[med]}
           <Button onClick={() => {this.handleOpenEditModal(med)}}>Edit</Button>
           <Button onClick={() => {this.handleOpenDeleteModal(med)}}>Delete</Button>
         </li>)
@@ -172,8 +156,6 @@ class MedList extends React.Component{
 
           <label for="add-med">Medication (max 20 characters) </label>
           <input class="input-default" type="text" name="add-med" onChange={this.onAddChange}/>
-          <label for="add-med">Notes</label>
-          <input class="input-default" type="text" name="add-notes" onChange={this.onNotesAddChange}/>
           <Button className="btn-secondary-default" onClick={this.submitAdd}>Add</Button>
           <Button className="btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</Button>
 
