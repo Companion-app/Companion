@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import Session from 'react-session-api';
 
 // https://react-icons.netlify.com/#/
 import { IconContext } from 'react-icons';
@@ -23,14 +21,11 @@ class Profile extends React.Component {
             axios.get('http://localhost:5000/get-profile', {
                 params: { id: this.state.userSession['id'] },
                 withCredentials: true
-            }).then(res => {
-                console.log(res.data)
-                this.setState({
+            }).then(res => this.setState({
                 name: res.data.name,
                 birthday: res.data.birthday,
-                diagnosis: res.data.diagnosis
-            })
-        })
+                diagnosis: rea.data.diagnosis
+            }))
         }
       }
   
@@ -45,18 +40,13 @@ class Profile extends React.Component {
                     {this.state.name}
                     {/* Jane Doe */}
                 </h1>
-                <p className=" ">
-                    <FaBirthdayCake />  
-                    {this.state.birthday}
-                    {/* Birthday: January 1 2000 */}
-                </p>
+                <p className=" "><FaBirthdayCake />  Birthday: January 1 2000</p>
                 <div className=" ">
                     <h2>Diagnoses</h2>
-                    {this.state.diagnosis}
-                    {/* <ul>
+                    <ul>
                         <li>Depression</li>
                         <li>Bipolar</li>
-                    </ul> */}
+                    </ul>
                 </div>
             </div>
             </IconContext.Provider>

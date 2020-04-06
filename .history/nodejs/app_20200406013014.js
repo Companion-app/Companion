@@ -111,7 +111,7 @@ app.get('/get-profile', (req, res)=>{
         console.log(result)
         res.json({
           name: result['name'],
-          birthday: result['dob'],
+          birthday: result['birthday'],
           diagnosis: result['diagnosis']
         });
       }

@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import Session from 'react-session-api';
 
 // https://react-icons.netlify.com/#/
 import { IconContext } from 'react-icons';
@@ -20,17 +18,14 @@ class Profile extends React.Component {
 
     componentDidMount(){
         if(this.state.userSession) {
-            axios.get('http://localhost:5000/get-profile', {
+            axios.post('http://localhost:5000/get-profile', {
                 params: { id: this.state.userSession['id'] },
                 withCredentials: true
-            }).then(res => {
-                console.log(res.data)
-                this.setState({
+            }).then(res => this.setState({
                 name: res.data.name,
                 birthday: res.data.birthday,
-                diagnosis: res.data.diagnosis
-            })
-        })
+                diagnosis: rea.data.diagnosis
+            }))
         }
       }
   

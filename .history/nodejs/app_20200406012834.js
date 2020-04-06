@@ -104,20 +104,17 @@ app.post('/logout', (req, res)=>{
 })
 
 app.get('/get-profile', (req, res)=>{
-  if(req.session) {
-    db.collection('UserDetails').findOne(
+  if (req.session) {
+    const result = db.collection('UserDetails').findOne(
       {'_id': ObjectId(req.query.id)},
       function(err, result){
         console.log(result)
-        res.json({
-          name: result['name'],
-          birthday: result['dob'],
-          diagnosis: result['diagnosis']
-        });
+        res.json({moods: result['moods']});
+  
       }
     )
-  }
-})
+  })
+  }  })
 
 
 /* ========== MOODS ========== */

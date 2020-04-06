@@ -23,14 +23,11 @@ class Profile extends React.Component {
             axios.get('http://localhost:5000/get-profile', {
                 params: { id: this.state.userSession['id'] },
                 withCredentials: true
-            }).then(res => {
-                console.log(res.data)
-                this.setState({
+            }).then(res => this.setState({
                 name: res.data.name,
                 birthday: res.data.birthday,
-                diagnosis: res.data.diagnosis
-            })
-        })
+                diagnosis: rea.data.diagnosis
+            }))
         }
       }
   

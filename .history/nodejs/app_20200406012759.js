@@ -100,24 +100,22 @@ app.post('/logout', (req, res)=>{
             // return res.redirect('/');
         }
     });
-  }  
-})
+}  })
 
 app.get('/get-profile', (req, res)=>{
-  if(req.session) {
-    db.collection('UserDetails').findOne(
-      {'_id': ObjectId(req.query.id)},
-      function(err, result){
-        console.log(result)
-        res.json({
-          name: result['name'],
-          birthday: result['dob'],
-          diagnosis: result['diagnosis']
-        });
-      }
-    )
-  }
-})
+  if (req.session) {
+    // delete session object
+    req.session.destroy(function(err) {
+        if(err) {
+            return next(err);
+        } else {
+            req.session = null;
+            console.log("logout successful");
+            res.sendStatus(200);
+            // return res.redirect('/');
+        }
+    });
+}  })
 
 
 /* ========== MOODS ========== */
