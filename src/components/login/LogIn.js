@@ -62,7 +62,7 @@ class LogIn extends React.Component {
         return <Redirect to='/' />
       }
       return(
-        <div>
+        <div className="div-backing">
         <h1>Welcome Back!</h1>
         <form onSubmit={this.handleSubmit}>
           <p>Email</p>

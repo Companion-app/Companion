@@ -32,15 +32,15 @@ class Profile extends React.Component {
             })
         })
         }
-      }
-  
+    }
+
     render() {
 
         return (
 
             // to consider: edit button
             <IconContext.Provider value={{size: '.8rem', color: 'black'}}> 
-            <div className="box-info">
+            <div className="div-backing">
                 <h1 className=" ">
                     {this.state.name}
                     {/* Jane Doe */}

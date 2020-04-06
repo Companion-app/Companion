@@ -1,9 +1,26 @@
 body { 
-    background-color: $base-color;
+    background-color: $supp-color-3;
 }
 
 // still unsure about this method
 .page-constraint {
     max-height: 736px;
     position: relative;
+}
+
+.div-backing { 
+    background-color: $white;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.div-heading{ 
+    text-align: center;
+}
+
+.modal-backing {
+    background-color: $white;
+    border-radius: 20px;
+    padding: 30px;
+    height: 90vh;
 }

@@ -16,7 +16,7 @@ import MedList from '../med-list/MedList.js';
 import Register from '../register/Register.js';
 import LogIn from '../login/LogIn.js';
 import Logout from '../logout/Logout.js';
-import Navbar from '../navbar/navbar.js';
+import Navbar from '../navbar/Navbar.js';
 
 // Styling
 import 'bootstrap/dist/css/bootstrap.min.css'

@@ -147,7 +147,7 @@ class MoodList extends React.Component{
       let modal;
       if(this.state.showAddModal) {
         modal =
-        <ReactModal
+        <ReactModal className="modal-backing"
           isOpen={this.state.showAddModal}
           contentLabel="Confirm delete mood modal">
           <h1>Add a Mood</h1>
@@ -161,7 +161,7 @@ class MoodList extends React.Component{
       }
       else if(this.state.showEditModal) {
         modal =
-        <ReactModal
+        <ReactModal className="modal-backing"
           isOpen={this.state.showEditModal}
           contentLabel="Confirm delete mood modal">
           <h1>Edit a Mood</h1>
@@ -173,7 +173,7 @@ class MoodList extends React.Component{
       }
       else if(this.state.showDeleteModal) {
         modal =
-        <ReactModal
+        <ReactModal className="modal-backing"
           isOpen={this.state.showDeleteModal}
           contentLabel="Confirm delete mood modal">
           <p>Are you sure you want to delete {this.state.moodSelected}?</p>
@@ -182,7 +182,7 @@ class MoodList extends React.Component{
         </ReactModal>
       }
       return (
-        <div>
+        <div className="div-backing">
           <h1>Moods</h1>
           {modal}
           <ul>

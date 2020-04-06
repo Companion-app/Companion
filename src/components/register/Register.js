@@ -134,9 +134,9 @@ class Register extends React.Component {
       </div>
       )}
       return(
-        <div>
+        <div className="div-backing">
         <form onSubmit={this.handleSubmit}>
-          <h1>I'm ready to help!</h1>
+          <h1 className="div-heading">I'm ready to help!</h1>
           {form}
           {/* <input className="btn-primary-solid" type="submit" value="Continue"/> */}
         </form>
