@@ -93,7 +93,7 @@ class Register extends React.Component {
               <label for="birthday">Birthday</label>
             </div>
             <div>
-              <input className="input-default" type="birthday" placeholder="MM/DD/YYYY" name="birthday" value={this.state.birthday} onChange={this.handleChangeBirthday} />
+              <input className="input-default" type="birthday" placeholder="MM/DD/YYYY" name="birthday" value={this.state.value} onChange={this.handleChangeBirthday} />
             </div>
           </div>
 

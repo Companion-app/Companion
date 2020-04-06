@@ -41,7 +41,6 @@ app.post('/register', [
   check('email').isEmail().normalizeEmail(),
   check('password').isLength({min:6, max:20}).trim().escape()
 ], (req, res) => {
-  console.log(req.body)
   if(req.body.diagnosis){
     diagnosis = req.body.diagnosis
   }else{
@@ -53,7 +52,7 @@ app.post('/register', [
       password: hash,
       name: req.body.name,
       dob: req.body.birthday,
-      diagnosis: diagnosis,
+      diagnosis: req.body.diagnosis,
       moods: {},
       meds: {}
     }, (err, result) => {

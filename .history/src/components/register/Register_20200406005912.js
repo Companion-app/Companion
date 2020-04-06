@@ -14,20 +14,12 @@ class Register extends React.Component {
         userSession: Session.get('user'),
         email: '',
         password: '',
-        showSecondForm: false,
-        name: '',
-        birthday: '',
-        diagnosis: '' 
+        showSecondForm: false 
       }
   
       this.handleChangeEmail = this.handleChangeEmail.bind(this);
       this.handleChangePassword = this.handleChangePassword.bind(this);
       this.handleFirstSubmit = this.handleFirstSubmit.bind(this);
-
-      this.handleChangeName = this.handleChangeName.bind(this);
-      this.handleChangeBirthday = this.handleChangeBirthday.bind(this);
-      this.handleChangeDiagnosis = this.handleChangeDiagnosis.bind(this);
-
       this.handleSubmit = this.handleSubmit.bind(this);
   
     }
@@ -45,72 +37,25 @@ class Register extends React.Component {
         showSecondForm: true
       })
     }
-
-    handleChangeName(event) {
-      this.setState({name: event.target.value});
-    }
-  
-    handleChangeBirthday(event) {
-      this.setState({birthday: event.target.value});
-    }
-
-    handleChangeDiagnosis(event) {
-        this.setState({diagnosis: event.target.value});
-      }
-
   
     handleSubmit(e){
       e.preventDefault();
+
       axios.post('http://localhost:5000/register', {
         email: this.state.email,
-        password: this.state.password,
-        name: this.state.name,
-        birthday: this.state.birthday,
-        diagnosis: this.state.diagnosis
+        password: this.state.password
       }, { withCredentials: true }).then(res => console.log(res.data))
       this.setState({redirect: true})
     }
   
     render(){
       if(this.state.redirect){
-        return <Redirect to='/' />
+        return <Redirect to='/register-2' />
       }
       if(this.state.showSecondForm){
-        var form = (
-          <div>
-            <div>
-              <h1>Just a bit more info!</h1>
-              <div>
-                <label for="name">Name</label>
-              </div>
-              <div>
-                <input className="input-default" type="name" placeholder="First Last" name="name" value={this.state.value} onChange={this.handleChangeName} />
-              </div>
-            </div>
-
-          <div>
-            <div>
-              <label for="birthday">Birthday</label>
-            </div>
-            <div>
-              <input className="input-default" type="birthday" placeholder="MM/DD/YYYY" name="birthday" value={this.state.birthday} onChange={this.handleChangeBirthday} />
-            </div>
-          </div>
-
-          <div>
-            <div>
-              <label for="diagnosis">Diagnosis(optional)</label>
-            </div>
-            <div>
-              <input className="input-default" type="diagnosis" placeholder="Diagnosis" name="diagnosis" value={this.state.value} onChange={this.handleChangeDiagnosis} />
-            </div>
-          </div>
-          <input className="btn-primary-solid" type="submit" value="Submit"/>
-        </div>
-        )
 
       }else{
-        var form = (
+        const form = (
         <div>
         <div>
           <div>

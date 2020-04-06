@@ -61,19 +61,17 @@ class Register extends React.Component {
   
     handleSubmit(e){
       e.preventDefault();
+
       axios.post('http://localhost:5000/register', {
         email: this.state.email,
-        password: this.state.password,
-        name: this.state.name,
-        birthday: this.state.birthday,
-        diagnosis: this.state.diagnosis
+        password: this.state.password
       }, { withCredentials: true }).then(res => console.log(res.data))
       this.setState({redirect: true})
     }
   
     render(){
       if(this.state.redirect){
-        return <Redirect to='/' />
+        return <Redirect to='/register-2' />
       }
       if(this.state.showSecondForm){
         var form = (
@@ -93,7 +91,7 @@ class Register extends React.Component {
               <label for="birthday">Birthday</label>
             </div>
             <div>
-              <input className="input-default" type="birthday" placeholder="MM/DD/YYYY" name="birthday" value={this.state.birthday} onChange={this.handleChangeBirthday} />
+              <input className="input-default" type="birthday" placeholder="MM/DD/YYYY" name="birthday" value={this.state.value} onChange={this.handleChangeBirthday} />
             </div>
           </div>
 
