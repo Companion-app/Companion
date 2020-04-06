@@ -130,14 +130,12 @@ class MedList extends React.Component{
     }
   
     submitEdit() {
-      axios.put('http://localhost:5000/edit-med', {id: this.state.userSession['id'], oldMed: this.state.medSelected, newMed: this.state.editValue, notes: this.state.notesEditValue}, { withCredentials: true })
+      axios.put('http://localhost:5000/edit-med', {oldMed: this.state.medSelected, newMed: this.state.editValue}, { withCredentials: true })
         .then(res => {
         let updatedMeds = this.state.meds;
         let temp = updatedMeds[this.state.medSelected]
         delete updatedMeds[this.state.medSelected]
-        // updatedMeds[this.state.editValue] = temp
-        updatedMeds[this.state.editValue] = this.state.notesEditValue
-
+        updatedMeds[this.state.editValue] = temp
         this.setState({
           showEditModal: false,
           medSelected: '',

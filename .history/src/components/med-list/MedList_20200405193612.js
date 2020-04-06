@@ -135,9 +135,7 @@ class MedList extends React.Component{
         let updatedMeds = this.state.meds;
         let temp = updatedMeds[this.state.medSelected]
         delete updatedMeds[this.state.medSelected]
-        // updatedMeds[this.state.editValue] = temp
-        updatedMeds[this.state.editValue] = this.state.notesEditValue
-
+        updatedMeds[this.state.editValue] = temp
         this.setState({
           showEditModal: false,
           medSelected: '',

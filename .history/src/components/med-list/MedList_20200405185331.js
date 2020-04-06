@@ -28,7 +28,7 @@ class MedList extends React.Component{
       this.onAddChange = this.onAddChange.bind(this);
       this.onNotesAddChange = this.onNotesAddChange.bind(this);
       this.onEditChange = this.onEditChange.bind(this);
-      this.onNotesEditChange = this.onNotesEditChange.bind(this);
+      this.onNotesEditChange = this.onNotesEditChange(this);
       this.submitAdd = this.submitAdd.bind(this);
       this.submitEdit = this.submitEdit.bind(this);
       this.submitConfirmDelete = this.submitConfirmDelete.bind(this);
@@ -130,14 +130,12 @@ class MedList extends React.Component{
     }
   
     submitEdit() {
-      axios.put('http://localhost:5000/edit-med', {id: this.state.userSession['id'], oldMed: this.state.medSelected, newMed: this.state.editValue, notes: this.state.notesEditValue}, { withCredentials: true })
+      axios.put('http://localhost:5000/edit-med', {oldMed: this.state.medSelected, newMed: this.state.editValue}, { withCredentials: true })
         .then(res => {
         let updatedMeds = this.state.meds;
         let temp = updatedMeds[this.state.medSelected]
         delete updatedMeds[this.state.medSelected]
-        // updatedMeds[this.state.editValue] = temp
-        updatedMeds[this.state.editValue] = this.state.notesEditValue
-
+        updatedMeds[this.state.editValue] = temp
         this.setState({
           showEditModal: false,
           medSelected: '',
@@ -162,7 +160,7 @@ class MedList extends React.Component{
     render(){
       let i =0
       let meds = []
-      // console.log(this.state.meds)
+      console.log(this.state.meds)
       for(let med in this.state.meds) {
         meds.push(med)
       }
@@ -198,7 +196,6 @@ class MedList extends React.Component{
           <h1>Edit a Medication</h1>
           <label for="edit-med">Medication (max 20 characters) </label>
           <input class="input-default" type="text" name="edit-med" onChange={this.onEditChange}/>
-          <label for="edit-med-notes">Notes</label>
           <input class="input-default" type="text" name="edit-med-notes" onChange={this.onNotesEditChange}/>
           <Button className="btn-secondary-default" onClick={this.submitEdit}>Edit</Button>
           <Button className="btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</Button>

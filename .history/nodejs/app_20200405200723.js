@@ -191,21 +191,13 @@ app.post('/delete-med', (req, res) => {
 
 app.put('/edit-med', (req, res) => {
   console.log(req.body)
-  let update;
-  if (req.body.oldMed === req.body.newMed){
-    update = {
-      $set: {[`meds.${req.body.newMed}`] : req.body.notes}
-    }
-  }else{
-    update = {
-      $unset: {[`meds.${req.body.oldMed}`] : ''},
-      $set: {[`meds.${req.body.newMed}`] : req.body.notes}
-    }
-  }
   db.collection('UserDetails').updateOne({
       _id:ObjectId(req.body.id)
     },
-      update,
+    {
+      $unset: {[`meds.${req.body.oldMed}`] : ''},
+      $set: {[`meds.${req.body.newMed}`] : `meds.${req.body.notes}`}
+    },
     // {
     //   $rename: 
     //   {
