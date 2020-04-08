@@ -8,7 +8,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col, Button, Dropdown } from 'react-bootstrap';
 import '../../styles/css/main.css';
 
-
+import { IconContext } from 'react-icons';
+import { FaTrash } from 'react-icons/fa';
 
 class MoodList extends React.Component{
     constructor(){
@@ -186,11 +187,18 @@ class MoodList extends React.Component{
         <ReactModal className="modal-backing"
           isOpen={this.state.showDeleteModal}
           contentLabel="Confirm delete mood modal">
+          <IconContext.Provider value={{size: '2rem', color: 'black'}}>
           <form  className="div-backing">
-            <p>Are you sure you want to delete <strong>{this.state.moodSelected}</strong>?</p>
-            <Button className="btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
-            <Button className="btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</Button>
+            <div className="center">
+              <FaTrash/>
+              <p>Are you sure you want to delete <strong>{this.state.moodSelected}</strong>?</p>
+            </div>
+            <div className="center">
+              <Button className="btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
+              <Button className="btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</Button>
+            </div>
           </form>
+          </IconContext.Provider>
         </ReactModal>
       }
       return (
