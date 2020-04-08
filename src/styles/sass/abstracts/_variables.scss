@@ -15,13 +15,14 @@ $text-color: #333333;
 // TYPOGRAPHY
 $font-stack: 'Arial Rounded MT Bold', sans-serif;
 
+$padding-center-text: 50px;
 // COMPONENTS
 // will have to make these % or something else to make them responsive 
 // $primary-button-width: 60vw;
 // $primary-button-height: 10vw;
 // $primary-button-radius: 30px;
 
-$primary-button-width: 220px;
+$primary-button-width: 95%;
 $primary-button-height: 50px;
 $primary-button-radius: 30px;
 
@@ -40,43 +41,43 @@ $textarea-default-height: 90px;
 $input-default-width: 100%;
 $input-default-height: 40px;
 
-@media only screen and (min-width: 375px) { 
-    $primary-button-width: 300px;
-    $primary-button-height: 50px;
-    $primary-button-radius: 30px;
+// @media only screen and (min-width: 375px) { 
+//     $primary-button-width: 300px;
+//     $primary-button-height: 50px;
+//     $primary-button-radius: 30px;
 
-    $secondary-button-width: 100px;
-    $secondary-button-height: 50px;
-    $secondary-button-radius: 10px;
+//     $secondary-button-width: 100px;
+//     $secondary-button-height: 50px;
+//     $secondary-button-radius: 10px;
 
-    $panel-width: 170px;
-    $panel-height: 180px;
-    $panel-radius: 25px;
+//     $panel-width: 170px;
+//     $panel-height: 180px;
+//     $panel-radius: 25px;
 
-    $textarea-default-width: 300px;
-    $textarea-default-height: 115px;
+//     $textarea-default-width: 300px;
+//     $textarea-default-height: 115px;
 
-    $input-default-width: 100%;
-    $input-default-height: 50px;
-}
+//     $input-default-width: 100%;
+//     $input-default-height: 50px;
+// }
 
 
-@media only screen and (min-width: 414px) {
-    $primary-button-width: 300px;
-    $primary-button-height: 50px;
-    $primary-button-radius: 30px;
+// @media only screen and (min-width: 414px) {
+//     $primary-button-width: 300px;
+//     $primary-button-height: 50px;
+//     $primary-button-radius: 30px;
 
-    $secondary-button-width: 120px;
-    $secondary-button-height: 50px;
-    $secondary-button-radius: 10px;
+//     $secondary-button-width: 120px;
+//     $secondary-button-height: 50px;
+//     $secondary-button-radius: 10px;
 
-    $panel-width: 170px;
-    $panel-height: 180px;
-    $panel-radius: 25px;
+//     $panel-width: 170px;
+//     $panel-height: 180px;
+//     $panel-radius: 25px;
 
-    $textarea-default-width: 300px;
-    $textarea-default-height: 115px;
+//     $textarea-default-width: 300px;
+//     $textarea-default-height: 115px;
 
-    $input-default-width: 100%;
-    $input-default-height: 50px;
-}
+//     $input-default-width: 100%;
+//     $input-default-height: 50px;
+// }

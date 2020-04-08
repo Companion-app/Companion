@@ -38,8 +38,8 @@
 
 .btn-secondary-default {
     @include secondary-button-size($secondary-button-width, $secondary-button-height);
-    background-color: $supp-color-2;
-    border: 3px solid $supp-color-2;
+    background-color: $primary-color;
+    border: 3px solid $primary-color;
     color: $white;
     box-shadow: 4px 4px 4px $outline-color;
     margin: 6px;
@@ -51,6 +51,17 @@
     @include secondary-button-size($secondary-button-width, $secondary-button-height);
     background-color: $supp-color-5;
     border: 3px solid $supp-color-5;
+    color: $white;
+    box-shadow: 4px 0px 4px $outline-color;
+    margin: 6px;
+    border-radius: $secondary-button-radius;
+    padding:3px;
+}
+
+.btn-secondary-edit {
+    @include secondary-button-size($secondary-button-width, $secondary-button-height);
+    background-color: $supp-color-2;
+    border: 3px solid $supp-color-2;
     color: $white;
     box-shadow: 4px 0px 4px $outline-color;
     margin: 6px;

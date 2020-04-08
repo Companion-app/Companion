@@ -1,3 +1,5 @@
+@import '../abstracts/_variables.scss';
+@import '../abstracts/_mixins.scss';
 body { 
     background-color: $supp-color-3;
 }
@@ -12,13 +14,15 @@ body {
     background-color: $white;
     border-radius: 20px;
     padding: 30px;
+    color:black;
 }
 
 .div-heading { 
-    text-align: center;
-    align-self: center;
-    margin: 0 auto;
-    padding-top: 50px;
+    @include center-text($padding-center-text);
+}
+
+.center { 
+    @include center-text($padding-center-text);
 }
 
 .modal-backing {

@@ -5,7 +5,7 @@ import ReactModal from 'react-modal';
 
 // Styling
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Button, Dropdown } from 'react-bootstrap';
 import '../../styles/css/main.css';
 
 
@@ -141,8 +141,8 @@ class MoodList extends React.Component{
       let moodList = moods.map((mood) =>
         <li key={i++}>
           {mood}
-          <Button onClick={() => {this.handleOpenEditModal(mood)}}>Edit</Button>
-          <Button onClick={() => {this.handleOpenDeleteModal(mood)}}>Delete</Button>
+          <Button className="btn-secondary-edit" onClick={() => {this.handleOpenEditModal(mood)}}>Edit</Button>
+          <Button className="btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(mood)}}>Delete</Button>
         </li>)
       let modal;
       if(this.state.showAddModal) {
@@ -150,13 +150,17 @@ class MoodList extends React.Component{
         <ReactModal className="modal-backing"
           isOpen={this.state.showAddModal}
           contentLabel="Confirm delete mood modal">
-          <h1>Add a Mood</h1>
-
-          <label for="add-mood">Mood (max 20 characters) </label>
-          <input class="input-default" type="text" name="add-mood" onChange={this.onAddChange}/>
-          <Button className="btn-secondary-default" onClick={this.submitAdd}>Add</Button>
-          <Button className="btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</Button>
-
+          <h1 className="div-heading">Add a Mood</h1>
+          <form className="form-backing row">
+            <div>
+              <label for="add-mood">Mood (max 20 characters) </label>
+              <input class="input-default" type="text" name="add-mood" onChange={this.onAddChange}/>
+            </div>
+            <div>
+              <Button className="btn-secondary-default" onClick={this.submitAdd}>Add</Button>
+              <Button className="btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</Button>
+            </div>
+          </form>
         </ReactModal>
       }
       else if(this.state.showEditModal) {
@@ -164,11 +168,17 @@ class MoodList extends React.Component{
         <ReactModal className="modal-backing"
           isOpen={this.state.showEditModal}
           contentLabel="Confirm delete mood modal">
-          <h1>Edit a Mood</h1>
-          <label for="edit-mood">Mood (max 20 characters) </label>
-          <input class="input-default" type="text" name="edit-mood" onChange={this.onEditChange}/>
-          <Button className="btn-secondary-default" onClick={this.submitEdit}>Edit</Button>
-          <Button className="btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</Button>
+          <h1 className="div-heading">Edit a Mood</h1>
+          <form className="form-backing row">
+            <div>
+              <label for="edit-mood">Mood (max 20 characters) </label>
+              <input class="input-default" type="text" name="edit-mood" onChange={this.onEditChange}/>
+            </div>
+            <div>
+              <Button className="btn-secondary-default" onClick={this.submitEdit}>Edit</Button>
+              <Button className="btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</Button>
+            </div>
+          </form>
         </ReactModal>
       }
       else if(this.state.showDeleteModal) {
@@ -176,9 +186,11 @@ class MoodList extends React.Component{
         <ReactModal className="modal-backing"
           isOpen={this.state.showDeleteModal}
           contentLabel="Confirm delete mood modal">
-          <p>Are you sure you want to delete {this.state.moodSelected}?</p>
-          <Button className="btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
-          <Button className="btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</Button>
+          <form  className="div-backing">
+            <p>Are you sure you want to delete <strong>{this.state.moodSelected}</strong>?</p>
+            <Button className="btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
+            <Button className="btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</Button>
+          </form>
         </ReactModal>
       }
       return (

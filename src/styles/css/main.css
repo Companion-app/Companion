@@ -66,9 +66,17 @@ body {
   background-color: #FFFFFF;
   border-radius: 20px;
   padding: 30px;
+  color: black;
 }
 
 .div-heading {
+  text-align: center;
+  align-self: center;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.center {
   text-align: center;
   align-self: center;
   margin: 0 auto;
@@ -100,7 +108,7 @@ body {
   }
 }
 .btn-primary-solid {
-  width: 220px;
+  width: 95%;
   height: 50px;
   background-color: #FFB74D;
   border: 3px solid #FFB74D;
@@ -113,7 +121,7 @@ body {
 }
 
 .btn-primary-solid-alt {
-  width: 220px;
+  width: 95%;
   height: 50px;
   background-color: #3387F1;
   border: 3px solid #3387F1;
@@ -126,7 +134,7 @@ body {
 }
 
 .btn-primary-outline {
-  width: 220px;
+  width: 95%;
   height: 50px;
   background-color: #FFFFFF;
   border: 3px solid #FFB74D;
@@ -139,8 +147,8 @@ body {
 .btn-secondary-default {
   width: 100px;
   height: 50px;
-  background-color: #3AB3FD;
-  border: 3px solid #3AB3FD;
+  background-color: #FFB74D;
+  border: 3px solid #FFB74D;
   color: #FFFFFF;
   box-shadow: 4px 4px 4px #C6C6C8;
   margin: 6px;
@@ -153,6 +161,18 @@ body {
   height: 50px;
   background-color: #F25C5C;
   border: 3px solid #F25C5C;
+  color: #FFFFFF;
+  box-shadow: 4px 0px 4px #C6C6C8;
+  margin: 6px;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.btn-secondary-edit {
+  width: 100px;
+  height: 50px;
+  background-color: #3AB3FD;
+  border: 3px solid #3AB3FD;
   color: #FFFFFF;
   box-shadow: 4px 0px 4px #C6C6C8;
   margin: 6px;
