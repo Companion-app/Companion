@@ -19,7 +19,7 @@ class Navbar extends React.Component {
 
         return (
 
-            <Container className="Navbar">
+            <div className="Navbar">
                 {/* Use of IconContext to style all at once, instead of each icon individually. 
                 If we want to override one icon, simply change it in the icon element 
                 https://www.youtube.com/watch?v=4l0nsK4ezNc*/}
@@ -31,7 +31,7 @@ class Navbar extends React.Component {
                         <Col className="Icon" xs={3}><Link to="/profile"><FaUserAlt /></Link></Col>
                     </Row>
                 </IconContext.Provider>
-            </Container>
+            </div>
         );
 
     }
