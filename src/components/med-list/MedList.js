@@ -8,6 +8,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import '../../styles/css/main.css';
 
+import { IconContext } from 'react-icons';
+import { GoSearch } from 'react-icons/fa';
+
 
 
 class MedList extends React.Component{
@@ -179,29 +182,41 @@ class MedList extends React.Component{
         <ReactModal className="modal-backing"
           isOpen={this.state.showAddModal}
           contentLabel="Confirm delete med modal">
-          <h1>Add a Medication</h1>
-
-          <label for="add-med">Medication (max 20 characters) </label>
-          <input class="input-default" type="text" name="add-med" onChange={this.onAddChange}/>
-          <label for="add-med">Notes</label>
-          <input class="input-default" type="text" name="add-notes" onChange={this.onNotesAddChange}/>
-          <Button className="btn-secondary-default" onClick={this.submitAdd}>Add</Button>
-          <Button className="btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</Button>
-
+          <h1 className="div-heading">Add a Medication</h1>
+          {/* <IconContext.Provider value={{size: '.8rem', color: 'black'}}>  */}
+          <form className="form-backing row">
+          <div>
+            <label className="col-12" for="add-med">Medication Name </label>
+            <input className="col-12 input-default" type="text" name="add-med" onChange={this.onAddChange}/>
+            <label className="col-12" for="add-med">Notes</label>
+            <input className="col-12 input-default" type="text" name="add-notes" onChange={this.onNotesAddChange}/>
+          </div>
+          <div>
+            <Button className="col-6 btn-secondary-default" onClick={this.submitAdd}>Add</Button>
+            <Button className="col-6 btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</Button>
+          </div>
+          </form>
+          {/* </IconContext.Provider> */}
         </ReactModal>
       }
       else if(this.state.showEditModal) {
         modal =
-        <ReactModal className="modal-backing"
+        <ReactModal className="modal-backing row"
           isOpen={this.state.showEditModal}
           contentLabel="Confirm delete med modal">
-          <h1>Edit a Medication</h1>
-          <label for="edit-med">Medication (max 20 characters) </label>
-          <input class="input-default" type="text" name="edit-med" onChange={this.onEditChange}/>
-          <label for="edit-med-notes">Notes</label>
-          <input class="input-default" type="text" name="edit-med-notes" onChange={this.onNotesEditChange}/>
-          <Button className="btn-secondary-default" onClick={this.submitEdit}>Edit</Button>
-          <Button className="btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</Button>
+          <h1 className="div-heading">Edit a Medication</h1>
+          <form className="form-backing row">
+            <div>
+              <label className="col-12" for="edit-med">Medication Name </label>
+              <input className="col-12" class="input-default" type="text" name="edit-med" onChange={this.onEditChange}/>
+              <label className="col-12" for="edit-med-notes">Notes</label>
+              <input className="col-12" class="input-default" type="text" name="edit-med-notes" onChange={this.onNotesEditChange}/>
+            </div>  
+            <div>       
+              <Button className="btn-secondary-default" onClick={this.submitEdit}>Edit</Button>
+              <Button className="btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</Button>
+            </div>  
+          </form>
         </ReactModal>
       }
       else if(this.state.showDeleteModal) {
@@ -209,9 +224,11 @@ class MedList extends React.Component{
         <ReactModal className="modal-backing"
           isOpen={this.state.showDeleteModal}
           contentLabel="Confirm delete med modal">
-          <p>Are you sure you want to delete {this.state.medSelected}?</p>
-          <Button className="btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
-          <Button className="btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</Button>
+          <form  className=" ">
+            <p>Are you sure you want to delete {this.state.medSelected}?</p>
+            <Button className="btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
+            <Button className="btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</Button>
+          </form>
         </ReactModal>
       }
       return (
@@ -221,7 +238,7 @@ class MedList extends React.Component{
           <ul>
             {medList}
           </ul>
-          <Button className="btn-primary-solid" onClick={this.handleOpenAddModal}>Add Med</Button>
+          <Button className="btn-primary-outline" onClick={this.handleOpenAddModal}>Add Med</Button>
         </div>
       )
     }

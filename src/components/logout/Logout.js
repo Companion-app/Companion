@@ -46,10 +46,11 @@ class Logout extends React.Component {
         return <Redirect to='/' />
       }
       return(
-        <div>
-        <h1>Are you sure you would like to Logout?</h1>
+        <div className="div-backing">
+        <p>Are you sure you would like to Logout?</p>
         <form onSubmit={this.handleSubmit}>
-          <input className="btn-primary-solid" type="submit" value="Yes"/>
+          <input className="btn-secondary-default" type="submit" value="Yes"/>
+          <input className="btn-secondary-alert" type="submit" value="No"/>
 
           {/* padding is off on buttons when they are submit */}
           {/* <Button className="btn-primary-solid" as="submit" value="Submit">Submit</Button> */}
