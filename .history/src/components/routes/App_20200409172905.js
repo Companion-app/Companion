@@ -17,7 +17,7 @@ import Register from '../register/Register.js';
 import LogIn from '../login/LogIn.js';
 import Logout from '../logout/Logout.js';
 import Navbar from '../navbar/Navbar.js';
-import Home from 'Home';
+import Home from 'Home'
 
 // Styling
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -74,9 +74,6 @@ return(
 
 
         <Switch>
-        <Route path="/">
-            <Home />
-          </Route>
           <Route path="/mood-list">
             <MoodList />
           </Route>

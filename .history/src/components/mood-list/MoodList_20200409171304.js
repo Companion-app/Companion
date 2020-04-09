@@ -187,7 +187,7 @@ class MoodList extends React.Component{
       let moodList = moods.map((mood) =>
         <li key={i++}>
           {/* <Button className="btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}></Button> */}
-          <Button className="btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
+          <Button className="btn-primary-outline unstyled" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
             {mood}
           </Button>
           <Button className="btn-secondary-edit" onClick={() => {this.handleOpenEditModal(mood)}}>Edit</Button>
@@ -289,7 +289,7 @@ class MoodList extends React.Component{
           {modal}
           {alert}
 
-          <ul className="list-unstyled">
+          <ul>
             {moodList}
           </ul>
           <Button className="btn-primary-outline" onClick={this.handleOpenAddModal}>+</Button>

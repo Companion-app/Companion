@@ -271,7 +271,7 @@ class MoodList extends React.Component{
       }
       let showSubmit;
       if (Object.keys(this.state.intensity).length > 0){
-        showSubmit = <Button className="btn-primary-solid" onClick={this.handleSubmitIntensity}>LOG</Button>
+        showSubmit = <Button className="btn-primary-solid" onClick={this.handleSubmitIntensity}>Submit</Button>
 
       }
 
@@ -289,10 +289,10 @@ class MoodList extends React.Component{
           {modal}
           {alert}
 
-          <ul className="list-unstyled">
+          <ul>
             {moodList}
           </ul>
-          <Button className="btn-primary-outline" onClick={this.handleOpenAddModal}>+</Button>
+          <Button className="btn-primary-solid" onClick={this.handleOpenAddModal}>Add Mood</Button>
           {showSubmit}
         </div>
       )

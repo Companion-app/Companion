@@ -74,9 +74,6 @@ return(
 
 
         <Switch>
-        <Route path="/">
-            <Home />
-          </Route>
           <Route path="/mood-list">
             <MoodList />
           </Route>

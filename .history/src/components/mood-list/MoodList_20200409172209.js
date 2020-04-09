@@ -289,7 +289,7 @@ class MoodList extends React.Component{
           {modal}
           {alert}
 
-          <ul className="list-unstyled">
+          <ul>
             {moodList}
           </ul>
           <Button className="btn-primary-outline" onClick={this.handleOpenAddModal}>+</Button>
