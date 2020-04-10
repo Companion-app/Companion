@@ -1,5 +1,5 @@
-.btn-primary-solid {
-  width: 220px;
+.hda-btn-primary-solid {
+  width: 95%;
   height: 50px;
   background-color: #FFB74D;
   border: 3px solid #FFB74D;
@@ -11,8 +11,8 @@
   text-align: center;
 }
 
-.btn-primary-solid-alt {
-  width: 220px;
+.hda-btn-primary-solid-alt {
+  width: 95%;
   height: 50px;
   background-color: #3387F1;
   border: 3px solid #3387F1;
@@ -24,8 +24,8 @@
   text-align: center;
 }
 
-.btn-primary-outline {
-  width: 220px;
+.hda-btn-primary-outline {
+  width: 95%;
   height: 50px;
   background-color: #FFFFFF;
   border: 3px solid #FFB74D;
@@ -35,7 +35,7 @@
   border-radius: 30px;
 }
 
-.btn-secondary-default {
+.hda-btn-secondary-default {
   width: 100px;
   height: 50px;
   background-color: #FFB74D;
@@ -47,7 +47,7 @@
   padding: 3px;
 }
 
-.btn-secondary-alert {
+.hda-btn-secondary-alert {
   width: 100px;
   height: 50px;
   background-color: #F25C5C;
@@ -59,7 +59,7 @@
   padding: 3px;
 }
 
-.btn-secondary-edit {
+.hda-btn-secondary-edit {
   width: 100px;
   height: 50px;
   background-color: #3AB3FD;
@@ -71,7 +71,7 @@
   padding: 3px;
 }
 
-.panel {
+.hda-panel {
   width: 170px;
   height: 180px;
   background-color: #FFFFFF;

@@ -6,8 +6,8 @@ import {
     Link,
     Redirect,
     useParams,
-  } from 'react-router-dom';
-  import Session from 'react-session-api';
+} from 'react-router-dom';
+import Session from 'react-session-api';
 
 // Styling
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -30,11 +30,16 @@ class Home extends React.Component{
 
         return(
             <div>
-                {/* Div for graph */}
-                {/* <div></div> */}
-                <Button className="panel">MOODS</Button>
-                <Button className="panel">MEDS</Button>
-                <Button className="panel">PROFILE</Button>
+                <div>
+                <h1 className="hda-DivHeading">Home</h1>
+                </div>
+                <div>
+                    {/* Div for graph */}
+                    {/* <div></div> */}
+                    <Button className="hda-panel">MOODS</Button>
+                    <Button className="hda-panel">MEDS</Button>
+                    <Button className="hda-panel">PROFILE</Button>
+                </div>
             </div>
         )
     }

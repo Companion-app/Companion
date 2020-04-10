@@ -78,69 +78,53 @@ class Register extends React.Component {
       if(this.state.showSecondForm){
         var form = (
           <div>
-            <div>
-              <h1>Just a bit more info!</h1>
-              <div>
+            <div className="hda-CenterText">
+              <h1 className="hda-DivHeading">Just a bit more info!</h1>
+              <img className="hda-Logo" width="40%" src="/assets/companion-logo.png" />
+            </div>
+            <form className="hdo-FormBacking">
                 <label htmlFor="name">Name</label>
-              </div>
-              <div>
-                <input className="input-default" type="name" placeholder="First Last" name="name" value={this.state.name} onChange={this.handleChangeName} />
-              </div>
-            </div>
 
-          <div>
-            <div>
+                <input className="hda-input-default" type="name" placeholder="First Last" name="name" value={this.state.name} onChange={this.handleChangeName} />
               <label htmlFor="birthday">Birthday</label>
-            </div>
-            <div>
-              <input className="input-default" type="birthday" placeholder="MM/DD/YYYY" name="birthday" value={this.state.birthday} onChange={this.handleChangeBirthday} />
-            </div>
-          </div>
 
-          <div>
-            <div>
-              <label htmlFor="diagnosis">Diagnosis(optional)</label>
-            </div>
-            <div>
-              <input className="input-default" type="diagnosis" placeholder="Diagnosis" name="diagnosis" value={this.state.diagnosis} onChange={this.handleChangeDiagnosis} />
-            </div>
-          </div>
-          <input className="btn-primary-solid" type="submit" value="Submit"/>
+              <input className="hda-input-default" type="birthday" placeholder="MM/DD/YYYY" name="birthday" value={this.state.birthday} onChange={this.handleChangeBirthday} />
+              <label htmlFor="diagnosis">Diagnosis (optional)</label>
+
+              <input className="hda-input-default" type="diagnosis" placeholder="Diagnosis" name="diagnosis" value={this.state.diagnosis} onChange={this.handleChangeDiagnosis} />
+
+          <input className="hda-btn-primary-solid" type="submit" value="Submit"/>
+        </form>
         </div>
+        // </div>
         )
 
       }else{
         var form = (
         <div>
-        <div>
-          <div>
-            <label for="email">Email</label>
+          <div className="hda-CenterText">
+            <h1 className="hda-DivHeading">I'm ready to help!</h1>
+            <img className="hda-Logo" width="40%" src="/assets/companion-logo.png" />
           </div>
-          <div>
-            <input className="input-default" type="email" placeholder="email@email.com" name="email" value={this.state.email} onChange={this.handleChangeEmail} />
-          </div>
-        </div>
+            <form className="hdo-FormBacking">
+              <label for="email">Email</label>
+              <input className="hda-input-default" type="email" placeholder="email@email.com" name="email" value={this.state.email} onChange={this.handleChangeEmail} />
+            
+              <label for="password">Password</label>
+              <input className="hda-input-default" type="password" placeholder="password" name="password" value={this.state.password} onChange={this.handleChangePassword} />
 
-        <div>
-          <div>
-            <label for="password">Password</label>
-          </div>
-          <div>
-            <input className="input-default" type="password" placeholder="password" name="password" value={this.state.password} onChange={this.handleChangePassword} />
-          </div>
-        </div>
-
-        <button className="btn-primary-solid" onClick={this.handleFirstSubmit}>Continue</button>
+              <button className="hda-btn-primary-solid" onClick={this.handleFirstSubmit}>Continue</button>
+            </form>
       </div>
       )}
       return(
-        <div className="div-backing">
+        // <div className="hdo-DivBacking">
         <form onSubmit={this.handleSubmit}>
-          <h1 className="div-heading">I'm ready to help!</h1>
+          {/* <h1 className="hda-DivHeading">I'm ready to help!</h1> */}
           {form}
-          {/* <input className="btn-primary-solid" type="submit" value="Continue"/> */}
+          {/* <input className="hda-btn-primary-solid" type="submit" value="Continue"/> */}
         </form>
-      </div>
+      // </div>
       )
     }
   }

@@ -67,24 +67,14 @@ class App extends React.Component{
     console.log(data)
     if(data && data['id']){
       display = <Home />
-      showNav = <Navbar fixed="bottom"/>
+      showNav = <Navbar/>
     }else{
       display = <Splash />
     }
 
     return(
       <Router>
-      <div className="page-constraint">
-
-          {/* <Button className="btn-primary-solid" onClick={this.Register}>Register</Button>
-          <Button className="btn-primary-solid-alt" onClick={this.Login}>Login</Button> */}
-
-          {/* Replace these buttons with above, paths need to be fixed */}
-          
-          {/* <Button className="btn-primary-solid"> 
-            <Link to="/logout">Logout</Link>
-          </Button> */}
-         
+      <div>
 
         <Switch>
           <Route 

@@ -1,17 +1,61 @@
-/* Error: Undefined variable.
- *   ,
- * 2 |     background-color: $supp-color-3;
- *   |                       ^^^^^^^^^^^^^
- *   '
- *   src/styles/sass/layout/_pages.scss 2:23  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a   \2577 \a 2 \2502      background-color: $supp-color-3;\a   \2502                        ^^^^^^^^^^^^^\a   \2575 \a   src/styles/sass/layout/_pages.scss 2:23  root stylesheet";
+body {
+  background-color: #57A7F1;
 }
+
+.hdt-SplashBacking {
+  background: #3387f1;
+  background: linear-gradient(180deg, #3387f1 0%, #3ab3fd 100%);
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+}
+
+.hdo-DivBacking {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px;
+  color: black;
+}
+
+.hdo-SplashBacking {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.hda-DivHeading {
+  text-align: center;
+  align-self: center;
+  margin: 0 auto;
+  padding-top: 50px;
+  color: #FFFFFF;
+}
+
+.hda-CenterText {
+  text-align: center;
+  align-self: center;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.hdt-ModalBacking {
+  background-color: #57A7F1;
+  padding: 30px;
+  height: 90vh;
+  margin: 2px;
+}
+
+.hdo-FormBacking {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+@media only screen and (min-width: 375px) {
+  .hdo-FormBacking {
+    padding: 50px;
+  }
+}
+
+/*# sourceMappingURL=pages.css.map */
