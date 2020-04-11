@@ -97,9 +97,9 @@ onChange = e => {
 
                 </div>
                 <div className="hdo-padding">
-                    <Button className="hda-panel">MOODS</Button>
-                    <Button className="hda-panel">MEDS</Button>
-                    <Button className="hda-panel">PROFILE</Button>
+                    <Button className="hda-panel" href="/mood-list">MOODS</Button>
+                    <Button className="hda-panel" href="/med-list">MEDS</Button>
+                    <Button className="hda-panel" href="/profile">PROFILE</Button>
                 </div>
             </div>
         )

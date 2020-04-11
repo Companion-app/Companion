@@ -171,8 +171,11 @@ class MedList extends React.Component{
       }
       let medList = meds.map((med) =>
         <li key={i++}>
-          {med}
-          {this.state.meds[med]}
+          <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(meds)}}>
+            {med}
+          </Button>
+          {/* {med} */}
+          {/* {this.state.meds[med]} */}
           <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(med)}}>Edit</Button>
           <Button className="hda-btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(med)}}>Delete</Button>
         </li>)
@@ -244,7 +247,7 @@ class MedList extends React.Component{
           <div className="hdo-DivBacking">
             {modal}
 
-            <ul>
+            <ul className="list-unstyled">
               {medList}
             </ul>
             <Button className="hda-btn-primary-outline" onClick={this.handleOpenAddModal}>Add Med</Button>
