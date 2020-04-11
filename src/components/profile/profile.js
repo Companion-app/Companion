@@ -38,8 +38,6 @@ class Profile extends React.Component {
 
         return (
 
-            // GRAPH
-
             // to consider: edit button
             <div className=" ">
                 <h1 className="hda-DivHeading">My Profile</h1>
@@ -59,6 +57,8 @@ class Profile extends React.Component {
                 </div>
             </div>
             </IconContext.Provider>
+
+            {/* LOGOUT BUTTON */}
             </div>
 
         );
