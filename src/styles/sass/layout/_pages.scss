@@ -47,6 +47,7 @@ body {
 
 .hda-CenterText { 
     @include center-text($padding-center-text);
+    // padding-bottom:10px;
 }
 
 // .hda-CenterLogo{ 
