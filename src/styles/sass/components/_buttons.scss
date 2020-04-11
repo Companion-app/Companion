@@ -9,7 +9,7 @@
     box-shadow: 4px 4px 4px $outline-color;
     margin: 6px;
     border-radius: $primary-button-radius;
-    // padding:3px;
+    padding:0.5rem;
     text-align: center;
     // font-size: 100%;
 }
@@ -22,7 +22,7 @@
     box-shadow: 4px 4px 4px $outline-color;
     margin: 6px;
     border-radius: $primary-button-radius;
-    // padding:3px;
+    padding:0.5rem;
     text-align: center;
 }
 
@@ -56,10 +56,6 @@
     margin: 6px;
     border-radius: $secondary-button-radius;
     padding:3px;
-}
-
-.hda-btn-secondary-alert:link{
-    color: $white;
 }
 
 .hda-btn-secondary-edit {

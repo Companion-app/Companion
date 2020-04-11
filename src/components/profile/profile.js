@@ -5,8 +5,6 @@ import Session from 'react-session-api';
 // https://react-icons.netlify.com/#/
 import { IconContext } from 'react-icons';
 import { FaBirthdayCake } from 'react-icons/fa';
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 
 
 class Profile extends React.Component {
@@ -54,18 +52,13 @@ class Profile extends React.Component {
 
                 </p>
                 <div>
-                    <h2>Diagnosis</h2>
+                    <h2>Diagnoses</h2>
                     {this.state.diagnosis}
                 </div>
             </div>
             </IconContext.Provider>
 
             {/* LOGOUT BUTTON */}
-            <div className="hdo-DivBacking">
-                <Button className="hda-btn-secondary-alert">
-                    <Link to="/logout">Log Out</Link>
-                </Button>
-            </div>
             </div>
 
         );

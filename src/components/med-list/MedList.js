@@ -182,13 +182,13 @@ class MedList extends React.Component{
         <ReactModal className="hdt-ModalBacking"
           isOpen={this.state.showAddModal}
           contentLabel="Confirm delete med modal">
-          <h1 className="hda-DivHeading">Add a Medication</h1>
+          <h1 className="hda-DivHeading hda-CenterText">Add a Medication</h1>
           <form className="hdo-FormBacking row">
             <div>
               <label className="col-12" for="add-med">Medication Name </label>
               <input className="col-12 hda-input-default" type="text" name="add-med" onChange={this.onAddChange}/>
               <label className="col-12" for="add-med">Notes</label>
-              <input className="col-12 hda-input-default" type="text" name="add-notes" onChange={this.onNotesAddChange}/>
+              <textarea className="col-12 hda-textarea-default" type="text" name="add-notes" onChange={this.onNotesAddChange}/>
             </div>
             <div>
               <Button className="col-6 hda-btn-secondary-default" onClick={this.submitAdd}>Add</Button>
@@ -202,13 +202,13 @@ class MedList extends React.Component{
         <ReactModal className="hdt-ModalBacking row"
           isOpen={this.state.showEditModal}
           contentLabel="Confirm delete med modal">
-          <h1 className="hda-DivHeading">Edit a Medication</h1>
+          <h1 className="hda-DivHeading hda-CenterText">Edit a Medication</h1>
           <form className="hdo-FormBacking row">
             <div>
               <label className="col-12" for="edit-med">Medication Name </label>
               <input className="col-12" class="hda-input-default" type="text" name="edit-med" onChange={this.onEditChange}/>
               <label className="col-12" for="edit-med-notes">Notes</label>
-              <input className="col-12" class="hda-input-default" type="text" name="edit-med-notes" onChange={this.onNotesEditChange}/>
+              <textarea className="col-12" class="hda-textarea-default" type="text" name="edit-med-notes" onChange={this.onNotesEditChange}/>
             </div>  
             <div>       
               <Button className="hda-btn-secondary-edit" onClick={this.submitEdit}>Edit</Button>

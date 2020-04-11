@@ -1,13 +1,13 @@
 import React from 'react';
 // import "../node_modules/react-vis/dist/style.css";
-import { XAxis, YAxis, XYPlot, VerticalBarSeries } from "react-vis";
+import { XAxis, YAxis, makeWidthFlexible, XYPlot, FlexibleXYPlot, VerticalBarSeries } from "react-vis";
 import {
     BrowserRouter as Router,
     Switch,
     Route,
     Link,
     Redirect,
-    useParams
+    useParams,
 } from 'react-router-dom';
 import Session from 'react-session-api';
 
@@ -24,37 +24,38 @@ class Home extends React.Component{
             userSession: Session.get('user'),
             moodSelectedByUser: [],
                 anger: [
-                    { x: "Sunday", y: 5 },
-                    { x: "Monday", y: 2 },
-                    { x: "Tuesday", y: 3 },
-                    { x: "Wednesday", y: 4 },
-                    { x: "Thursday", y: 2 },
-                    { x: "Friday", y: 5 },
-                    { x: "Saturday", y: 1 }
+                    { x: "S", y: 5 },
+                    { x: "M", y: 2 },
+                    { x: "T", y: 3 },
+                    { x: "W", y: 4 },
+                    { x: "T", y: 2 },
+                    { x: "F", y: 5 },
+                    { x: "SA", y: 1 }
                 ],
                 irritability: [
-                    { x: "Sunday", y: 5 },
-                    { x: "Monday", y: 1 },
-                    { x: "Tuesday", y: 2 },
-                    { x: "Wednesday", y: 3 },
-                    { x: "Thursday", y: 5 },
-                    { x: "Friday", y: 2 },
-                    { x: "Saturday", y: 3 }
+                    { x: "S", y: 5 },
+                    { x: "M", y: 1 },
+                    { x: "T", y: 2 },
+                    { x: "W", y: 3 },
+                    { x: "T", y: 5 },
+                    { x: "F", y: 2 },
+                    { x: "SA", y: 3 }
                 ],
                 anxiousness: [
-                    { x: "Sunday", y: 2 },
-                    { x: "Monday", y: 2 },
-                    { x: "Tuesday", y: 4 },
-                    { x: "Wednesday", y: 5 },
-                    { x: "Thursday", y: 2 },
-                    { x: "Friday", y: 2 },
-                    { x: "Saturday", y: 1 }
+                    { x: "S", y: 2 },
+                    { x: "M", y: 2 },
+                    { x: "T", y: 4 },
+                    { x: "W", y: 5 },
+                    { x: "T", y: 2 },
+                    { x: "F", y: 2 },
+                    { x: "SA", y: 1 }
                 ]
         };
     this.onChange = this.onChange.bind(this);
 }
 
 onChange = e => {
+    const FlexibleXYPlot = makeWidthFlexible(XYPlot); 
     const moodSelectedByUser = e.target.value;
     if(moodSelectedByUser === "0"){
             this.setState({ moodSelectedByUser: this.state.anger })
@@ -67,51 +68,38 @@ onChange = e => {
 };
 
     render(){
-        // if(!this.state.userSession ){
-        //     return <Redirect to="/" />
-        // }
-        
-        // if(data && 'id' in data){
-        //     display = <Home />
-        //     showNav = <Navbar/>
-        // }else{
-        //     display = <Splash />
+        // if(sessionId){
+
         // }
 
         return(
-            <div>
-                <h1 className="hda-DivHeading">Home</h1>
-                <div>
-                    <h2>Weekly Mood Summary</h2>
-                    <p>Select your mood:</p>
-                    <select defaultValue={this.state.selectValue} onChange={this.onChange} >
-                        <option value="0">Anger</option>
-                        <option value="1">Irritability</option>
-                        <option value="2">Anxiousness</option>
-                    </select>
-                    </div>
-                    <XYPlot height={350} width={580} xType="ordinal" color="orange">
-                    <VerticalBarSeries data={this.state.moodSelectedByUser} />
-                    {console.log(this.state.moodSelectedByUser)}
+            <div className="hdp-bottom-padding">
+                    <h1 className="hda-DivHeading">Home</h1>
 
-                    <XAxis title="Mood" />
-                    <YAxis title="Intensity" />
-                    <p>Mood by Intensity</p>
-                    </XYPlot>
-                <div>
+                <div className="hdo-DivBacking">
+                    <div>
+                        <h3 className="hda-CenterText">Weekly Mood Summary</h3>
+                        <p className="hdo-padding" >Select your mood:</p>
+                        <select className="hdo-padding" defaultValue={this.state.selectValue} onChange={this.onChange} >
+                            <option value="0">Anger</option>
+                            <option value="1">Irritability</option>
+                            <option value="2">Anxiousness</option>
+                        </select>
+                    </div>
+
+                    <FlexibleXYPlot height={200} xType="ordinal" color="orange">
+                        <VerticalBarSeries data={this.state.moodSelectedByUser} />
+                        {console.log(this.state.moodSelectedByUser)}
+                        <XAxis title="Mood" />
+                        <YAxis title="Intensity" />
+                        {/* <p>Mood by Intensity</p> */}
+                    </FlexibleXYPlot>
+
                 </div>
-                <div>
-                    {/* Div for graph */}
-                    {/* <div></div> */}
-                    <Button className="hda-panel">
-                        <Link to="/mood-list">MOODS</Link>
-                    </Button>
-                    <Button className="hda-panel">
-                        <Link to="/med-list">MEDS</Link>
-                    </Button>
-                    <Button className="hda-panel">
-                        <Link to="/profile">PROFILE</Link>
-                    </Button>
+                <div className="hdo-padding">
+                    <Button className="hda-panel">MOODS</Button>
+                    <Button className="hda-panel">MEDS</Button>
+                    <Button className="hda-panel">PROFILE</Button>
                 </div>
             </div>
         )

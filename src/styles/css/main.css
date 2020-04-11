@@ -45,7 +45,6 @@
 
 body {
   font-family: "Arial Rounded MT Bold", sans-serif;
-  margin-left: 8px;
   margin-right: 8px;
 }
 
@@ -56,6 +55,7 @@ body {
   width: 300px;
   font-size: 1.95em;
   text-align: center;
+  padding: 5px;
 }
 
 .hdo-Navbar {
@@ -77,6 +77,7 @@ body {
 
 body {
   background-color: #57A7F1;
+  margin-left: 0;
 }
 
 .hdt-SplashBacking {
@@ -102,10 +103,8 @@ body {
 }
 
 .hda-DivHeading {
-  text-align: center;
-  align-self: center;
-  margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 10px;
+  padding-left: 15px;
   color: #FFFFFF;
 }
 
@@ -129,6 +128,14 @@ body {
   padding: 30px;
 }
 
+.hdo-padding {
+  padding: 5px;
+}
+
+.hdp-bottom-padding {
+  padding-bottom: 100px;
+}
+
 @media only screen and (min-width: 375px) {
   .hdo-FormBacking {
     padding: 50px;
@@ -143,6 +150,7 @@ body {
   box-shadow: 4px 4px 4px #C6C6C8;
   margin: 6px;
   border-radius: 30px;
+  padding: 0.5rem;
   text-align: center;
 }
 
@@ -155,6 +163,7 @@ body {
   box-shadow: 4px 4px 4px #C6C6C8;
   margin: 6px;
   border-radius: 30px;
+  padding: 0.5rem;
   text-align: center;
 }
 
@@ -223,7 +232,7 @@ label {
 }
 
 .hda-textarea-default {
-  width: 220px;
+  width: 100%;
   height: 90px;
   border: 3px solid #EDF5FD;
   border-radius: 10px;

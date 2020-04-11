@@ -165,11 +165,7 @@ app.post('/delete-mood', (req, res) => {
 })
 
 app.put('/edit-mood', (req, res) => {
-  db.collection('UserDetails').updateOne({
-    _id:ObjectId(req.body.id)}, 
-    {$rename: {[`moods.${req.body.oldMood}`]: `moods.${req.body.newMood}`}
-  })
-  console.log(req.body)
+  db.collection('UserDetails').updateOne({_id:ObjectId(req.body.userId)}, {$rename: {[`moods.${req.body.oldMood}`]: `moods.${req.body.newMood}`}})
   console.log('updated database')
   res.sendStatus(200)
 })

@@ -43,8 +43,7 @@ class Logout extends React.Component {
 
     render(){
       if(this.state.redirect){
-        return <Redirect exact to='/' />
-        // history.pushState(null, '/')
+        return <Redirect to='/' />
       }
       return(
         <div className="hdo-DivBacking">

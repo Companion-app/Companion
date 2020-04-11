@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import Session from 'react-session-api';
 import ReactModal from 'react-modal';
-import SwipeableViews from 'react-swipeable-views';
 
 // Styling
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -10,6 +9,7 @@ import { Container, Row, Col, Button, Form, Dropdown } from 'react-bootstrap';
 import Slider from '@material-ui/core/Slider';
 import Alert from '@material-ui/lab/Alert'
 import '../../styles/css/main.css';
+
 import { IconContext } from 'react-icons';
 import { FaTrash } from 'react-icons/fa';
 
@@ -27,8 +27,7 @@ class MoodList extends React.Component{
         editValue: '',
         addValue: '',
         intensity: {},
-        showAlert: false,
-        swipeIndex: 0
+        showAlert: false
       }
       this.onAddChange = this.onAddChange.bind(this);
       this.onEditChange = this.onEditChange.bind(this);
@@ -45,9 +44,7 @@ class MoodList extends React.Component{
       this.handleCloseIntensityModal = this.handleCloseIntensityModal.bind(this);
       this.onIntensityChange = this.onIntensityChange.bind(this);
       this.handleSubmitIntensity = this.handleSubmitIntensity.bind(this);
-      this.onSwipeChange = this.onSwipeChange.bind(this);
     }
-    
   
     componentDidMount(){
       if(this.state.userSession) {
@@ -118,9 +115,7 @@ class MoodList extends React.Component{
     }
   
     submitEdit() {
-      axios.put('http://localhost:5000/edit-mood', 
-      {id: this.state.userSession['id'], oldMood: this.state.moodSelected, newMood: this.state.editValue}, 
-      { withCredentials: true })
+      axios.put('http://localhost:5000/edit-mood', {oldMood: this.state.moodSelected, newMood: this.state.editValue}, { withCredentials: true })
         .then(res => {
         let updatedMoods = this.state.moods;
         let temp = updatedMoods[this.state.moodSelected]
@@ -182,12 +177,6 @@ class MoodList extends React.Component{
       }))
       console.log(this.state.intensity)
     }
-
-    onSwipeChange(index, indexLatest, meta){
-      this.setState({
-        swipeIndex: index
-      })
-    }
   
     render(){
       let i =0
@@ -195,31 +184,13 @@ class MoodList extends React.Component{
       for(let mood in this.state.moods) {
         moods.push(mood)
       }
-
-      if(this.state.swipeIndex == 1){
-        this.setState({
-          swipeIndex : 0
-        })
-      }
-
-
       let moodList = moods.map((mood) =>
         <li key={i++}>
-          <SwipeableViews enableMouseEvents onChangeIndex={this.onSwipeChange}>
-            <div>
-              <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
-                {mood}
-              </Button>
-            </div>
-            <div>
-              <Button className="hda-btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(mood)}}>
-                Delete
-              </Button>
-              <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(mood)}}>
-                Edit
-              </Button>
-            </div>
-          </SwipeableViews>
+          <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
+            {mood}
+          </Button>
+          <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(mood)}}>Edit</Button>
+          <Button className="hda-btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(mood)}}>Delete</Button>
         </li>)
       let modal;
       if(this.state.showAddModal) {
@@ -227,7 +198,7 @@ class MoodList extends React.Component{
         <ReactModal className="hdt-ModalBacking"
           isOpen={this.state.showAddModal}
           contentLabel="Confirm delete mood modal">
-          <h1 className="hda-DivHeading">Add a Mood</h1>
+          <h1 className="hda-DivHeading hda-CenterText">Add a Mood</h1>
           <form className="hdo-FormBacking row">
             <div>
               <label htmlFor="add-mood">Mood (max 20 characters) </label>
@@ -246,7 +217,7 @@ class MoodList extends React.Component{
           isOpen={this.state.showEditModal}
           contentLabel="Confirm delete mood modal">
           <div>
-          <h1 className="hda-DivHeading">Edit a Mood</h1>
+          <h1 className="hda-DivHeading hda-CenterText">Edit a Mood</h1>
           </div>
           <form className="hdo-FormBacking row">
             <div>
@@ -315,7 +286,7 @@ class MoodList extends React.Component{
           Your moods have been successfully logged!
         </Alert>
       }
-    
+
       return (
         <div>
           <div>

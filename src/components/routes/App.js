@@ -42,22 +42,15 @@ class App extends React.Component{
   componentDidMount() {
     const setCallback = (data) => {
       this.setState({
-        sessionId: data
+        sessionId: data['id']
         // sessionEmail: data['email']
       })
     }
     Session.onSet(setCallback)
   }
 
-  // shouldComponentUpdate(){
-  //   const data = Session.get('user')
-  //   console.log(data)
-  //   return false;
-  // }
-
   render(){
     const data = Session.get('user')
-    let display;
     // let dataLi;
     // if(data) {
     //   dataLi = <li>{data['email']}</li>
@@ -67,24 +60,27 @@ class App extends React.Component{
     //     showSplash : false
     //   })
     // }
-    // console.log(this.state.sessionId['user']['id'])
-    // for(var d in data){
-    //   console.log(d)
-    // }
+
+    let display;
+    let showNav;
+    console.log(this.state)
+    console.log(data)
+    if(data && data['id']){
+      display = <Home />
+      showNav = <Navbar/>
+    }else{
+      display = <Splash />
+    }
 
     return(
       <Router>
       <div>
+
         <Switch>
-          <Route
-            exact
-            path="/">
-            <Splash />
-          </Route>
           <Route 
             exact
-            path="/home">
-            <Home />
+            path="/">
+            {display}
           </Route>
           <Route 
             exact
@@ -111,7 +107,8 @@ class App extends React.Component{
             <Profile />
           </Route>
         </Switch>
-        <Navbar />
+        
+        {showNav}
       </div>
       </Router>
     )

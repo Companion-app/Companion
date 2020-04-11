@@ -32,7 +32,7 @@ class Splash extends React.Component{
         // }
 
         return(
-            <body className="hdt-SplashBacking hda-CenterText">
+            <div className="hdt-SplashBacking hda-CenterText">
                 <div className="hdo-SplashBacking hda-CenterText">
                     <img className="hda-Logo" width="50%" src="/assets/companion-logo.png" />
                     <h1 className="hda-SplashWelcome">WELCOME</h1>
@@ -45,13 +45,11 @@ class Splash extends React.Component{
                         {/* <Link className=" " to="/register">REGISTER</Link> */}
                     </Button>
 
-                    {/* Div for graph */}
-                    {/* <div></div> */}
                 </div>
                 <div className="hda-SplastText">
                     <p>COMPANION</p>
                 </div>
-            </body>
+            </div>
         )
     }
 
