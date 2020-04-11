@@ -39,27 +39,27 @@ class Profile extends React.Component {
         return (
 
             // to consider: edit button
+            <div className=" ">
+                <h1 className="hda-DivHeading">My Profile</h1>
             <IconContext.Provider value={{size: '.8rem', color: 'black'}}> 
-            <div className="div-backing">
-                <h1 className=" ">
+            <div className="hdo-DivBacking">
+                <h1>
                     {this.state.name}
-                    {/* Jane Doe */}
                 </h1>
-                <p className=" ">
+                <p>
                     <FaBirthdayCake />  
                     {this.state.birthday}
-                    {/* Birthday: January 1 2000 */}
+
                 </p>
-                <div className=" ">
+                <div>
                     <h2>Diagnoses</h2>
                     {this.state.diagnosis}
-                    {/* <ul>
-                        <li>Depression</li>
-                        <li>Bipolar</li>
-                    </ul> */}
                 </div>
             </div>
             </IconContext.Provider>
+
+            {/* LOGOUT BUTTON */}
+            </div>
 
         );
 

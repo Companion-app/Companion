@@ -4,36 +4,62 @@ body {
     background-color: $supp-color-3;
 }
 
-// still unsure about this method
-.page-constraint {
-    max-height: 736px;
-    position: relative;
+.hdt-SplashBacking {
+    background: rgb(51,135,241);
+    background: linear-gradient(180deg, rgba(51,135,241,1) 0%, rgba(58,179,253,1) 100%);
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+
+    // overflow: hidden;
 }
 
-.div-backing { 
+// still unsure about this method
+// .page-constraint {
+//     max-height: 736px;
+//     position: relative;
+// }
+
+.hdo-DivBacking { 
     background-color: $white;
     border-radius: 20px;
     padding: 30px;
+    margin: 20px;
     color:black;
 }
 
-.div-heading { 
+.hdo-SplashBacking { 
+    background-color: $white;
+    // circle
+    // border-radius: 100%; 
+    border-radius: 20px;
+    // width: 100px;
+    // height: 100px;
+    padding: 30px;
+}
+
+.hda-DivHeading { 
+    @include center-text($padding-center-text);
+    color: $white;
+}
+
+.hda-CenterText { 
     @include center-text($padding-center-text);
 }
 
-.center { 
-    @include center-text($padding-center-text);
-}
+// .hda-CenterLogo{ 
+//     padding-top:
+// }
 
-.modal-backing {
+.hdt-ModalBacking {
     background-color: $supp-color-3;
     padding: 30px;
     height: 90vh;
     margin: 2px;
-    color: $white;
+    // color: $white;
 }
 
-.form-backing {
+.hdo-FormBacking {
     background-color: $white;
     border-radius: 15px;
     padding: 30px;
@@ -41,13 +67,7 @@ body {
 
 
 @media only screen and (min-width: 375px) { 
-    .form-backing {
-        padding: 50px;
-    }
-}
-
-@media only screen and (min-width: 414px) {
-    .form-backing {
+    .hdo-FormBacking {
         padding: 50px;
     }
 }

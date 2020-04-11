@@ -1,25 +1,46 @@
-.h--1 {
+.hda-Logo {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.hda-h1 {
   font-size: 2.441em;
 }
 
-.h--2 {
+.hda-h2 {
   font-size: 1.953em;
 }
 
-.h--3 {
+.hda-h3 {
   font-size: 1.563em;
 }
 
-.h--4 {
+.hda-h4 {
   font-size: 1.25em;
 }
 
-.p--default {
+.hda-p {
   font-size: 1em;
 }
 
-.p--xs {
+.hda-xs-p {
   font-size: 0.8em;
+}
+
+.hda-SplastText {
+  bottom: 0;
+  text-align: center;
+  position: relative;
+  color: #FFFFFF;
+  padding-top: 30%;
+}
+
+.hda-SplashWelcome {
+  color: #3387F1;
+}
+
+.hda-SplashCTA {
+  color: #FFB74D;
 }
 
 body {
@@ -28,7 +49,7 @@ body {
   margin-right: 8px;
 }
 
-.message {
+.hda-message {
   line-height: 34px;
   letter-spacing: 3%;
   height: 65px;
@@ -37,7 +58,7 @@ body {
   text-align: center;
 }
 
-.Navbar {
+.hdo-Navbar {
   background-color: #F2F2F2;
   box-shadow: 0px -1px 4px #C6C6C8;
   left: 0;
@@ -45,12 +66,12 @@ body {
   position: fixed;
   width: 100%;
 }
-.Navbar .Icon {
+.hdo-Navbar .hda-Icon {
   padding: 15px;
   border: 5px solid #F2F2F2;
   text-align: center;
 }
-.Navbar .Icon:active {
+.hdo-Navbar .hda-Icon:active {
   border-top: 5px solid #FFB74D;
 }
 
@@ -58,57 +79,62 @@ body {
   background-color: #57A7F1;
 }
 
-.page-constraint {
-  max-height: 736px;
-  position: relative;
+.hdt-SplashBacking {
+  background: #3387f1;
+  background: linear-gradient(180deg, #3387f1 0%, #3ab3fd 100%);
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
 }
 
-.div-backing {
+.hdo-DivBacking {
   background-color: #FFFFFF;
   border-radius: 20px;
   padding: 30px;
+  margin: 20px;
   color: black;
 }
 
-.div-heading {
+.hdo-SplashBacking {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.hda-DivHeading {
   text-align: center;
   align-self: center;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 30px;
+  color: #FFFFFF;
 }
 
-.center {
+.hda-CenterText {
   text-align: center;
   align-self: center;
   margin: 0 auto;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
-.modal-backing {
+.hdt-ModalBacking {
   background-color: #57A7F1;
   padding: 30px;
   height: 90vh;
   margin: 2px;
-  color: #FFFFFF;
 }
 
-.form-backing {
+.hdo-FormBacking {
   background-color: #FFFFFF;
   border-radius: 15px;
   padding: 30px;
 }
 
 @media only screen and (min-width: 375px) {
-  .form-backing {
+  .hdo-FormBacking {
     padding: 50px;
   }
 }
-@media only screen and (min-width: 414px) {
-  .form-backing {
-    padding: 50px;
-  }
-}
-.btn-primary-solid {
+.hda-btn-primary-solid {
   width: 95%;
   height: 50px;
   background-color: #FFB74D;
@@ -117,11 +143,10 @@ body {
   box-shadow: 4px 4px 4px #C6C6C8;
   margin: 6px;
   border-radius: 30px;
-  padding: 3px;
   text-align: center;
 }
 
-.btn-primary-solid-alt {
+.hda-btn-primary-solid-alt {
   width: 95%;
   height: 50px;
   background-color: #3387F1;
@@ -130,11 +155,10 @@ body {
   box-shadow: 4px 4px 4px #C6C6C8;
   margin: 6px;
   border-radius: 30px;
-  padding: 3px;
   text-align: center;
 }
 
-.btn-primary-outline {
+.hda-btn-primary-outline {
   width: 95%;
   height: 50px;
   background-color: #FFFFFF;
@@ -145,7 +169,7 @@ body {
   border-radius: 30px;
 }
 
-.btn-secondary-default {
+.hda-btn-secondary-default {
   width: 100px;
   height: 50px;
   background-color: #FFB74D;
@@ -157,7 +181,7 @@ body {
   padding: 3px;
 }
 
-.btn-secondary-alert {
+.hda-btn-secondary-alert {
   width: 100px;
   height: 50px;
   background-color: #F25C5C;
@@ -169,7 +193,7 @@ body {
   padding: 3px;
 }
 
-.btn-secondary-edit {
+.hda-btn-secondary-edit {
   width: 100px;
   height: 50px;
   background-color: #3AB3FD;
@@ -181,13 +205,12 @@ body {
   padding: 3px;
 }
 
-.panel {
-  width: 170px;
+.hda-panel {
+  width: 100%;
   height: 180px;
   background-color: #FFFFFF;
   border: 3px solid #FFFFFF;
   color: #FFB74D;
-  box-shadow: 4px 2px 2px #C6C6C8;
   margin: 6px;
   border-radius: 25px;
   padding: 3px;
@@ -199,7 +222,7 @@ label {
   color: #3AB3FD;
 }
 
-.textarea-default {
+.hda-textarea-default {
   width: 220px;
   height: 90px;
   border: 3px solid #EDF5FD;
@@ -207,7 +230,7 @@ label {
   padding: 10px;
 }
 
-.input-default {
+.hda-input-default {
   width: 100%;
   height: 40px;
   border: 3px solid #EDF5FD;

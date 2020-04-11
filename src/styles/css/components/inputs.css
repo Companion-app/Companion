@@ -3,17 +3,17 @@ label {
   color: #3AB3FD;
 }
 
-.textarea-default {
-  width: 300px;
-  height: 115px;
+.hda-textarea-default {
+  width: 220px;
+  height: 90px;
   border: 3px solid #EDF5FD;
   border-radius: 10px;
   padding: 10px;
 }
 
-.input-default {
-  width: 300px;
-  height: 50px;
+.hda-input-default {
+  width: 100%;
+  height: 40px;
   border: 3px solid #EDF5FD;
   border-radius: 10px;
   padding: 10px;

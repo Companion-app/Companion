@@ -1,7 +1,7 @@
 @import '../abstracts/_variables.scss';
 @import '../abstracts/_mixins.scss';
 
-.btn-primary-solid {
+.hda-btn-primary-solid {
     @include primary-button-size($primary-button-width, $primary-button-height);
     background-color: $primary-color;
     border: 3px solid $primary-color;
@@ -9,12 +9,12 @@
     box-shadow: 4px 4px 4px $outline-color;
     margin: 6px;
     border-radius: $primary-button-radius;
-    padding:3px;
+    // padding:3px;
     text-align: center;
     // font-size: 100%;
 }
 
-.btn-primary-solid-alt {
+.hda-btn-primary-solid-alt {
     @include primary-button-size($primary-button-width, $primary-button-height);
     background-color: $sup-color-1;
     border: 3px solid $sup-color-1;
@@ -22,11 +22,11 @@
     box-shadow: 4px 4px 4px $outline-color;
     margin: 6px;
     border-radius: $primary-button-radius;
-    padding:3px;
+    // padding:3px;
     text-align: center;
 }
 
-.btn-primary-outline {
+.hda-btn-primary-outline {
     @include primary-button-size($primary-button-width, $primary-button-height);
     background-color: $white;
     border: 3px solid $primary-color;
@@ -36,7 +36,7 @@
     border-radius: $primary-button-radius;
 }
 
-.btn-secondary-default {
+.hda-btn-secondary-default {
     @include secondary-button-size($secondary-button-width, $secondary-button-height);
     background-color: $primary-color;
     border: 3px solid $primary-color;
@@ -47,7 +47,7 @@
     padding:3px;
 }
 
-.btn-secondary-alert {
+.hda-btn-secondary-alert {
     @include secondary-button-size($secondary-button-width, $secondary-button-height);
     background-color: $supp-color-5;
     border: 3px solid $supp-color-5;
@@ -58,7 +58,7 @@
     padding:3px;
 }
 
-.btn-secondary-edit {
+.hda-btn-secondary-edit {
     @include secondary-button-size($secondary-button-width, $secondary-button-height);
     background-color: $supp-color-2;
     border: 3px solid $supp-color-2;
@@ -69,12 +69,12 @@
     padding:3px;
 }
 
-.panel {
+.hda-panel {
     @include panel-size($panel-width, $panel-height);
     background-color: $white;
     border: 3px solid $white;
     color: $primary-color;
-    box-shadow: 4px 2px 2px $outline-color;
+    // box-shadow: 4px 2px 2px $outline-color;
     margin: 6px;
     border-radius: $panel-radius;
     padding:3px;

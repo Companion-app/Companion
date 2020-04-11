@@ -62,23 +62,26 @@ class LogIn extends React.Component {
         return <Redirect to='/' />
       }
       return(
-        <div className="div-backing">
-        <h1>Welcome Back!</h1>
+        <div>
+          <div className="hda-CenterText">
+            <h1 className="hda-DivHeading">Welcome Back!</h1>
+            <img className="hda-Logo" width="40%" src="/assets/companion-logo.png" />
+          </div>
+        <div className="hdo-DivBacking">
         <form onSubmit={this.handleSubmit}>
-          <p>Email</p>
-          <input className="input-default" type="email" placeholder="email@email.com" name="email" value={this.state.value} onChange={this.handleChangeEmail} />
 
-          <p>Password</p>
-          <input className="input-default" type="password" placeholder="password" name="password" value={this.state.value} onChange={this.handleChangePassword} />
+          <label for="email">Email</label>
+          <input className="hda-input-default" type="email" placeholder="email@email.com" name="email" value={this.state.value} onChange={this.handleChangeEmail} />
 
-          <input className="btn-primary-solid" type="submit" value="Submit"/>
+          <label for="password">Password</label>
+          <input className="hda-input-default" type="password" placeholder="password" name="password" value={this.state.value} onChange={this.handleChangePassword} />
 
-          {/* padding is off on buttons when they are submit */}
-          {/* <Button className="btn-primary-solid" as="submit" value="Submit">Submit</Button> */}
+          <input className="hda-btn-primary-solid" type="submit" value="Submit"/>
 
         </form>
 
         <p>{this.state.errorMessage}</p>
+      </div>
       </div>
 
       )

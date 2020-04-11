@@ -19,16 +19,16 @@ class Navbar extends React.Component {
 
         return (
 
-            <div className="Navbar">
+            <div className="hdo-Navbar">
                 {/* Use of IconContext to style all at once, instead of each icon individually. 
                 If we want to override one icon, simply change it in the icon element 
                 https://www.youtube.com/watch?v=4l0nsK4ezNc*/}
                 <IconContext.Provider value={{size: '2rem', color: 'black'}}> 
                     <Row>
-                        <Col className="Icon" xs={3}><Link to="/"><AiTwotoneHome /></Link></Col>
-                        <Col className="Icon" xs={3}><Link to="/mood-list"><FaSmile /></Link></Col>
-                        <Col className="Icon" xs={3}><Link to="/med-list"><FaPills /></Link></Col>
-                        <Col className="Icon" xs={3}><Link to="/profile"><FaUserAlt /></Link></Col>
+                        <Col className="hda-Icon" xs={3}><Link to="/"><AiTwotoneHome /></Link></Col>
+                        <Col className="hda-Icon" xs={3}><Link to="/mood-list"><FaSmile /></Link></Col>
+                        <Col className="hda-Icon" xs={3}><Link to="/med-list"><FaPills /></Link></Col>
+                        <Col className="hda-Icon" xs={3}><Link to="/profile"><FaUserAlt /></Link></Col>
                     </Row>
                 </IconContext.Provider>
             </div>

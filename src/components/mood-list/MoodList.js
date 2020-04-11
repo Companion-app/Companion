@@ -207,16 +207,16 @@ class MoodList extends React.Component{
         <li key={i++}>
           <SwipeableViews enableMouseEvents onChangeIndex={this.onSwipeChange}>
             <div>
-              <Button className="btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
+              <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
                 {mood}
               </Button>
             </div>
             <div>
-              <Button className="btn-secondary-edit" onClick={() => {this.handleOpenEditModal(mood)}}>
-                Edit
-              </Button>
-              <Button className="btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(mood)}}>
+              <Button className="hda-btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(mood)}}>
                 Delete
+              </Button>
+              <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(mood)}}>
+                Edit
               </Button>
             </div>
           </SwipeableViews>
@@ -224,54 +224,56 @@ class MoodList extends React.Component{
       let modal;
       if(this.state.showAddModal) {
         modal =
-        <ReactModal className="modal-backing"
+        <ReactModal className="hdt-ModalBacking"
           isOpen={this.state.showAddModal}
           contentLabel="Confirm delete mood modal">
-          <h1 className="div-heading">Add a Mood</h1>
-          <form className="form-backing row">
+          <h1 className="hda-DivHeading">Add a Mood</h1>
+          <form className="hdo-FormBacking row">
             <div>
               <label htmlFor="add-mood">Mood (max 20 characters) </label>
               <input className="input-default" type="text" name="add-mood" onChange={this.onAddChange}/>
             </div>
             <div>
-              <Button className="btn-secondary-default" onClick={this.submitAdd}>Add</Button>
-              <Button className="btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</Button>
+              <Button className="hda-btn-secondary-default" onClick={this.submitAdd}>Add</Button>
+              <Button className="hda-btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</Button>
             </div>
           </form>
         </ReactModal>
       }
       else if(this.state.showEditModal) {
         modal =
-        <ReactModal className="modal-backing"
+        <ReactModal className="hdt-ModalBacking"
           isOpen={this.state.showEditModal}
           contentLabel="Confirm delete mood modal">
-          <h1 className="div-heading">Edit a Mood</h1>
-          <form className="form-backing row">
+          <div>
+          <h1 className="hda-DivHeading">Edit a Mood</h1>
+          </div>
+          <form className="hdo-FormBacking row">
             <div>
-              <label htmlFor="edit-mood">Mood (max 20 characters) </label>
-              <input className="input-default" type="text" name="edit-mood" onChange={this.onEditChange}/>
+              <label for="edit-mood">Mood (max 20 characters) </label>
+              <input className="hda-input-default" type="text" name="edit-mood" onChange={this.onEditChange}/>
             </div>
             <div>
-              <Button className="btn-secondary-default" onClick={this.submitEdit}>Edit</Button>
-              <Button className="btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</Button>
+              <Button className="hda-btn-secondary-default" onClick={this.submitEdit}>Edit</Button>
+              <Button className="hda-btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</Button>
             </div>
           </form>
         </ReactModal>
       }
       else if(this.state.showDeleteModal) {
         modal =
-        <ReactModal className="modal-backing"
+        <ReactModal className="hdt-ModalBacking"
           isOpen={this.state.showDeleteModal}
           contentLabel="Confirm delete mood modal">
           <IconContext.Provider value={{size: '2rem', color: 'black'}}>
-          <form  className="div-backing">
-            <div className="center">
+          <form  className="hdo-FormBacking">
+            <div className="hda-CenterText">
               <FaTrash/>
               <p>Are you sure you want to delete <strong>{this.state.moodSelected}</strong>?</p>
             </div>
-            <div className="center">
-              <Button className="btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
-              <Button className="btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</Button>
+            <div className="hda-CenterText">
+              <Button className="hda-btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
+              <Button className="hda-btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</Button>
             </div>
           </form>
           </IconContext.Provider>
@@ -279,27 +281,30 @@ class MoodList extends React.Component{
       }
       else if(this.state.showIntensityModal) {
         modal = 
-        <ReactModal className="modal-backing"
+        <ReactModal className="hdt-ModalBacking"
           isOpen={this.state.showIntensityModal}
           contentLabel="Set Intensity">
-          <p>{this.state.moodSelected}</p>
-          <Slider
-            defaultValue={-1}
-            // getAriaValueText={valuetext}
-            aria-labelledby="discrete-slider"
-            valueLabelDisplay="on"
-            step={1}
-            marks
-            min={0}
-            max={5}
-            onChange={this.onIntensityChange}
-          />
-          <Button className="btn-secondary-default" onClick={this.handleCloseIntensityModal}>Set</Button>
+          <h1 className="hda-DivHeading hda-CenterText">{this.state.moodSelected}</h1>
+          <div className="hdo-FormBacking">
+            <Slider
+              defaultValue={-1}
+              // getAriaValueText={valuetext}
+              aria-labelledby="discrete-slider"
+              valueLabelDisplay="on"
+              step={1}
+              marks
+              min={0}
+              max={5}
+              onChange={this.onIntensityChange}
+            />
+          {/* Do we need a cancel button? */}
+            <Button className="hda-btn-secondary-default" onClick={this.handleCloseIntensityModal}>Set</Button>
+          </div>
         </ReactModal>
       }
       let showSubmit;
       if (Object.keys(this.state.intensity).length > 0){
-        showSubmit = <Button className="btn-primary-solid" onClick={this.handleSubmitIntensity}>LOG</Button>
+        showSubmit = <Button className="hda-btn-primary-solid" onClick={this.handleSubmitIntensity}>LOG</Button>
 
       }
 
@@ -312,15 +317,20 @@ class MoodList extends React.Component{
       }
     
       return (
-        <div className="div-backing">
-          <h1>Moods</h1>
-          {modal}
-          {alert}
-          <ul className="list-unstyled">
-            {moodList}
-          </ul>
-          <Button className="btn-primary-outline" onClick={this.handleOpenAddModal}>+</Button>
-          {showSubmit}
+        <div>
+          <div>
+            <h1 className="hda-DivHeading">Moods</h1>
+          </div>
+          <div className="hdo-DivBacking">
+            {modal}
+            {alert}
+
+            <ul className="list-unstyled">
+              {moodList}
+            </ul>
+            <Button className="hda-btn-primary-outline" onClick={this.handleOpenAddModal}>+</Button>
+            {showSubmit}
+          </div>
         </div>
       )
     }

@@ -173,79 +173,82 @@ class MedList extends React.Component{
         <li key={i++}>
           {med}
           {this.state.meds[med]}
-          <Button className="btn-secondary-edit" onClick={() => {this.handleOpenEditModal(med)}}>Edit</Button>
-          <Button className="btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(med)}}>Delete</Button>
+          <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(med)}}>Edit</Button>
+          <Button className="hda-btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(med)}}>Delete</Button>
         </li>)
       let modal;
       if(this.state.showAddModal) {
         modal =
-        <ReactModal className="modal-backing"
+        <ReactModal className="hdt-ModalBacking"
           isOpen={this.state.showAddModal}
           contentLabel="Confirm delete med modal">
-          <h1 className="div-heading">Add a Medication</h1>
-          <form className="form-backing row">
+          <h1 className="hda-DivHeading">Add a Medication</h1>
+          <form className="hdo-FormBacking row">
             <div>
               <label className="col-12" for="add-med">Medication Name </label>
-              <input className="col-12 input-default" type="text" name="add-med" onChange={this.onAddChange}/>
+              <input className="col-12 hda-input-default" type="text" name="add-med" onChange={this.onAddChange}/>
               <label className="col-12" for="add-med">Notes</label>
-              <input className="col-12 input-default" type="text" name="add-notes" onChange={this.onNotesAddChange}/>
+              <input className="col-12 hda-input-default" type="text" name="add-notes" onChange={this.onNotesAddChange}/>
             </div>
             <div>
-              <Button className="col-6 btn-secondary-default" onClick={this.submitAdd}>Add</Button>
-              <Button className="col-6 btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</Button>
+              <Button className="col-6 hda-btn-secondary-default" onClick={this.submitAdd}>Add</Button>
+              <Button className="col-6 hda-btn-secondary-alert" onClick={this.handleCloseAddModal}>Cancel</Button>
             </div>
           </form>
         </ReactModal>
       }
       else if(this.state.showEditModal) {
         modal =
-        <ReactModal className="modal-backing row"
+        <ReactModal className="hdt-ModalBacking row"
           isOpen={this.state.showEditModal}
           contentLabel="Confirm delete med modal">
-          <h1 className="div-heading">Edit a Medication</h1>
-          <form className="form-backing row">
+          <h1 className="hda-DivHeading">Edit a Medication</h1>
+          <form className="hdo-FormBacking row">
             <div>
               <label className="col-12" for="edit-med">Medication Name </label>
-              <input className="col-12" class="input-default" type="text" name="edit-med" onChange={this.onEditChange}/>
+              <input className="col-12" class="hda-input-default" type="text" name="edit-med" onChange={this.onEditChange}/>
               <label className="col-12" for="edit-med-notes">Notes</label>
-              <input className="col-12" class="input-default" type="text" name="edit-med-notes" onChange={this.onNotesEditChange}/>
+              <input className="col-12" class="hda-input-default" type="text" name="edit-med-notes" onChange={this.onNotesEditChange}/>
             </div>  
             <div>       
-              <Button className="btn-secondary-edit" onClick={this.submitEdit}>Edit</Button>
-              <Button className="btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</Button>
+              <Button className="hda-btn-secondary-edit" onClick={this.submitEdit}>Edit</Button>
+              <Button className="hda-btn-secondary-alert" onClick={this.handleCloseEditModal}>Cancel</Button>
             </div>  
           </form>
         </ReactModal>
       }
       else if(this.state.showDeleteModal) {
         modal =
-        <ReactModal className="modal-backing"
+        <ReactModal className="hdt-ModalBacking"
           isOpen={this.state.showDeleteModal}
           contentLabel="Confirm delete med modal">
           <IconContext.Provider value={{size: '2rem', color: 'black'}}>
-            <form  className="div-backing">
-              <div className="center">
+            <form  className="hdo-DivBacking">
+              <div className="Text">
                 <FaTrash/>
                 <p>Are you sure you want to delete the emotion <strong>{this.state.medSelected}</strong>?</p>
               </div>
-              <div className="center">
-                <Button className="btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
-                <Button className="btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</Button>
+              <div className="hda-CenterText">
+                <Button className="hda-btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
+                <Button className="hda-btn-secondary-alert" onClick={this.handleCloseDeleteModal}>Cancel</Button>
               </div>
             </form>
           </IconContext.Provider>
         </ReactModal>
       }
       return (
-        <div className="div-backing">
-          <h1>Medications</h1>
-          {modal}
+        <div>
+          <div>
+            <h1 className="hda-DivHeading">Medications</h1>
+          </div>
+          <div className="hdo-DivBacking">
+            {modal}
 
-          <ul>
-            {medList}
-          </ul>
-
-          <Button className="btn-primary-outline" onClick={this.handleOpenAddModal}>Add Med</Button>
+            <ul>
+              {medList}
+            </ul>
+            <Button className="hda-btn-primary-outline" onClick={this.handleOpenAddModal}>Add Med</Button>
+          </div>
         </div>
       )
     }
