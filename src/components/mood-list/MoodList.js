@@ -205,12 +205,20 @@ class MoodList extends React.Component{
         <li key={i++}>
           <SwipeableViews enableMouseEvents onChangeIndex={this.onSwipeChange}>
           <div>
-            <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
-              {mood}
+              <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
+              <Row>
 
-              {/* MOOD INTENSITY */}
-              {this.state.intensity[mood]}
-            </Button>
+                <Col xs={10} className="pl-5 pr-0">
+                  {mood}
+                </Col>
+
+                {/* MOOD INTENSITY */}
+
+                <Col xs={2} className="pl-0">
+                  {this.state.intensity[mood]}
+                </Col>
+                </Row>
+              </Button>
           </div>
           <div>
             <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(mood)}}>Edit</Button>
