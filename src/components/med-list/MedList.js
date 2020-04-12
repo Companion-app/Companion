@@ -187,7 +187,9 @@ class MedList extends React.Component{
                 {med}
               </Button>
               {/* MED NOTES */}
-              <p>{this.state.meds[med]}</p>
+              <p className="hda-message">{this.state.meds[med]}</p>
+              {/* <input className="hda-input-default">{this.state.meds[med]}</input> */}
+
             </div>
             <div>
               <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(med)}}>Edit</Button>
@@ -266,7 +268,7 @@ class MedList extends React.Component{
             <ul className="list-unstyled">
               {medList}
             </ul>
-            <Button className="hda-btn-primary-outline" onClick={this.handleOpenAddModal}>Add Med</Button>
+            <Button className="hda-btn-primary-outline" onClick={this.handleOpenAddModal}>ADD MED</Button>
           </div>
         </div>
       )

@@ -61,9 +61,8 @@ class Profile extends React.Component {
             </IconContext.Provider>
 
             {/* LOGOUT BUTTON */}
-            <div className="hdo-DivBacking">
-                <Button className="hda-btn-secondary-alert">
-                    <Link to="/logout">Log Out</Link>
+            <div className="hdo-DivBacking hda-CenterText">
+                <Button className="hda-btn-secondary-alert" href="/logout">LOGOUT
                 </Button>
             </div>
 
