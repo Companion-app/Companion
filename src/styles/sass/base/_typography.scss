@@ -1,0 +1,65 @@
+@import '../abstracts/_variables.scss';
+
+
+.hda-Logo {
+    padding-top:30px;
+    padding-bottom:30px;
+}
+// bootstrap's default font sizing is not far off, but use these classes to override them
+.hda-h1 {
+    font-size: 2.441em;
+}
+
+.hda-h2 {
+    font-size: 1.953em;
+}
+
+.hda-h3 {
+    font-size: 1.563em;
+}
+
+.hda-h4 {
+    font-size: 1.25em;
+}
+
+.hda-p {
+    font-size: 1em;
+}
+
+// fine-print 
+.hda-xs-p {
+    font-size: 0.8em;
+}
+
+.hda-SplastText {
+    bottom: 0;
+    text-align: center;
+    position: relative;
+    color: $white; 
+    padding-top: 30%;
+}
+
+.hda-SplashWelcome {
+    color: $sup-color-1; 
+}
+
+.hda-SplashCTA {
+    color: $primary-color; 
+}
+
+body {
+    font-family: $font-stack;
+    margin-right: 8px;
+}
+
+// might have to restructure this depending on code * will check back
+// REVISIT THIS
+.hda-message { 
+    line-height: 34px;
+    letter-spacing: 3%;
+    height: 65px;
+    width: 300px;
+    font-size: 1.95em;
+    text-align: center;
+    padding: 5px;
+}

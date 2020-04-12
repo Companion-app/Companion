@@ -1,0 +1,83 @@
+@import '../abstracts/_variables.scss';
+@import '../abstracts/_mixins.scss';
+body { 
+    background-color: $supp-color-3;
+    margin-left: 0;
+}
+
+.hdt-SplashBacking {
+    background: rgb(51,135,241);
+    background: linear-gradient(180deg, rgba(51,135,241,1) 0%, rgba(58,179,253,1) 100%);
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+
+    // overflow: hidden;
+}
+
+// still unsure about this method
+// .page-constraint {
+//     max-height: 736px;
+//     position: relative;
+// }
+
+.hdo-DivBacking { 
+    background-color: $white;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px;
+    color:black;
+}
+
+.hdo-SplashBacking { 
+    background-color: $white;
+    // circle
+    // border-radius: 100%; 
+    border-radius: 20px;
+    // width: 100px;
+    // height: 100px;
+    padding: 30px;
+}
+
+.hda-DivHeading { 
+    padding-top: 10px;
+    padding-left: 15px;
+    color: $white;
+}
+
+.hda-CenterText { 
+    @include center-text($padding-center-text);
+    padding: 10px;
+}
+
+// .hda-CenterLogo{ 
+//     padding-top:
+// }
+
+.hdt-ModalBacking {
+    background-color: $supp-color-3;
+    padding: 30px;
+    height: 90vh;
+    margin: 2px;
+    // color: $white;
+}
+
+.hdo-FormBacking {
+    background-color: $white;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.hdo-padding { 
+    padding: 5px;
+}
+
+.hdp-bottom-padding { 
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 375px) { 
+    .hdo-FormBacking {
+        padding: 50px;
+    }
+}

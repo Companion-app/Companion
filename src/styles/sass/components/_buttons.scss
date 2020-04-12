@@ -1,0 +1,85 @@
+@import '../abstracts/_variables.scss';
+@import '../abstracts/_mixins.scss';
+
+.hda-btn-primary-solid {
+    @include primary-button-size($primary-button-width, $primary-button-height);
+    background-color: $primary-color;
+    border: 3px solid $primary-color;
+    color: $white;
+    box-shadow: 4px 4px 4px $outline-color;
+    margin: 6px;
+    border-radius: $primary-button-radius;
+    padding:0.5rem;
+    text-align: center;
+    // font-size: 100%;
+}
+
+.hda-btn-primary-solid-alt {
+    @include primary-button-size($primary-button-width, $primary-button-height);
+    background-color: $sup-color-1;
+    border: 3px solid $sup-color-1;
+    color: $white;
+    box-shadow: 4px 4px 4px $outline-color;
+    margin: 6px;
+    border-radius: $primary-button-radius;
+    padding:0.5rem;
+    text-align: center;
+}
+
+.hda-btn-primary-outline {
+    @include primary-button-size($primary-button-width, $primary-button-height);
+    background-color: $white;
+    border: 3px solid $primary-color;
+    color: $primary-color;
+    box-shadow: 4px 4px 4px $outline-color;
+    margin: 6px;
+    border-radius: $primary-button-radius;
+}
+
+.hda-btn-secondary-default {
+    @include secondary-button-size($secondary-button-width, $secondary-button-height);
+    background-color: $primary-color;
+    border: 3px solid $primary-color;
+    color: $white;
+    box-shadow: 4px 4px 4px $outline-color;
+    margin: 6px;
+    border-radius: $secondary-button-radius;
+    padding:3px;
+}
+
+.hda-btn-secondary-alert {
+    @include secondary-button-size($secondary-button-width, $secondary-button-height);
+    background-color: $supp-color-5;
+    border: 3px solid $supp-color-5;
+    color: $white;
+    box-shadow: 4px 0px 4px $outline-color;
+    margin: 6px;
+    border-radius: $secondary-button-radius;
+    padding:3px;
+}
+
+.hda-btn-secondary-edit {
+    @include secondary-button-size($secondary-button-width, $secondary-button-height);
+    background-color: $supp-color-2;
+    border: 3px solid $supp-color-2;
+    color: $white;
+    box-shadow: 4px 0px 4px $outline-color;
+    margin: 6px;
+    border-radius: $secondary-button-radius;
+    padding:3px;
+}
+
+.hda-panel {
+    @include panel-size($panel-width, $panel-height);
+    background-color: $white;
+    border: 3px solid $white;
+    color: $primary-color;
+    // box-shadow: 4px 2px 2px $outline-color;
+    margin: 6px;
+    border-radius: $panel-radius;
+    padding:3px;
+    text-align: center;
+    align-self: auto;
+    // TBD make the text align on the bottom
+    // text-decoration: none;
+}
