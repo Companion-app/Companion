@@ -16,7 +16,7 @@ class Logout extends React.Component {
         userSession: Session.get('user'),
         errorMessage: '',
         redirect: false,
-        redirectProfile: false,
+        redirectHome: false,
         sessionEmail : ''
       }
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,11 +28,11 @@ class Logout extends React.Component {
       e.preventDefault();
       console.log(e.target.value)
 
-      if(e.target.value === "yes"){
+      if(e.target.value === yes){
         this.handleSubmit(e)
       }else{
         this.setState({
-          redirectProfile:true
+          redirectHome:true;
         })
       }
     }
@@ -60,8 +60,8 @@ class Logout extends React.Component {
       if(this.state.redirect){
         return <Redirect to='/' />
       }
-      if(this.state.redirectProfile){
-        return <Redirect to='/profile'/>
+      if(this.state.redirectHome){
+        return <Redirect to='/home'/>
       }
       return(
       <div className="hdo-DivBacking">

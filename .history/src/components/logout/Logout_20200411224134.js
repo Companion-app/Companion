@@ -60,8 +60,8 @@ class Logout extends React.Component {
       if(this.state.redirect){
         return <Redirect to='/' />
       }
-      if(this.state.redirectProfile){
-        return <Redirect to='/profile'/>
+      if(this.state.redirectHome){
+        return <Redirect to='/home'/>
       }
       return(
       <div className="hdo-DivBacking">
