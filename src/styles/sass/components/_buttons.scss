@@ -30,6 +30,16 @@
     text-align: center;
 }
 
+.hda-intensity {
+    background-color: $primary-color;
+    color: $white;
+    width:22px;
+    // border-radius: 20px;
+    float: right;
+    border-radius: 60%;
+    // display: inline-block;
+}
+
 .hda-btn-primary-outline {
     @include primary-button-size($primary-button-width, $primary-button-height);
     background-color: $white;
