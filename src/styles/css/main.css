@@ -45,17 +45,15 @@
 
 body {
   font-family: "Arial Rounded MT Bold", sans-serif;
-  margin-right: 8px;
 }
 
 .hda-message {
   line-height: 34px;
-  letter-spacing: 3%;
-  height: 65px;
-  width: 300px;
-  font-size: 1.95em;
   text-align: center;
   padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+  background-color: #F2F2F2;
 }
 
 .hdo-Navbar {
@@ -207,7 +205,7 @@ body {
   box-shadow: 4px 0px 4px #C6C6C8;
   margin: 6px;
   border-radius: 10px;
-  padding: 3px;
+  padding: 0.5rem;
 }
 
 .hda-btn-secondary-edit {
@@ -219,7 +217,7 @@ body {
   box-shadow: 4px 0px 4px #C6C6C8;
   margin: 6px;
   border-radius: 10px;
-  padding: 3px;
+  padding: 0.5rem;
 }
 
 .hda-panel {

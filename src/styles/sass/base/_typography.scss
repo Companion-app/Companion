@@ -49,17 +49,15 @@
 
 body {
     font-family: $font-stack;
-    margin-right: 8px;
+    // margin-right: 8px;
 }
 
-// might have to restructure this depending on code * will check back
-// REVISIT THIS
 .hda-message { 
     line-height: 34px;
-    letter-spacing: 3%;
-    height: 65px;
-    width: 300px;
-    font-size: 1.95em;
     text-align: center;
     padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    // border: 2px dashed $outline-color;
+    background-color: $base-color;
 }

@@ -207,6 +207,9 @@ class MoodList extends React.Component{
           <div>
             <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
               {mood}
+
+              {/* MOOD NOTES */}
+              {this.state.intensity[mood]}
             </Button>
           </div>
           <div>
@@ -322,7 +325,7 @@ class MoodList extends React.Component{
             <ul className="list-unstyled">
               {moodList}
             </ul>
-            <Button className="hda-btn-primary-outline" onClick={this.handleOpenAddModal}>+</Button>
+            <Button className="hda-btn-primary-outline" onClick={this.handleOpenAddModal}>ADD MOOD</Button>
             {showSubmit}
           </div>
         </div>

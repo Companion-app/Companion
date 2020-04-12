@@ -82,7 +82,7 @@ class Register extends React.Component {
               <h1 className="hda-DivHeading">Just a bit more info!</h1>
               <img className="hda-Logo" width="40%" src="/assets/companion-logo.png" />
             </div>
-            <form className="hdo-FormBacking">
+            <form className="hdo-DivBacking">
                 <label htmlFor="name">Name</label>
 
                 <input className="hda-input-default" type="name" placeholder="First Last" name="name" value={this.state.name} onChange={this.handleChangeName} />
@@ -106,7 +106,7 @@ class Register extends React.Component {
             <h1 className="hda-DivHeading">I'm ready to help!</h1>
             <img className="hda-Logo" width="40%" src="/assets/companion-logo.png" />
           </div>
-            <form className="hdo-FormBacking">
+            <form className="hdo-DivBacking">
               <label for="email">Email</label>
               <input className="hda-input-default" type="email" placeholder="email@email.com" name="email" value={this.state.email} onChange={this.handleChangeEmail} />
             

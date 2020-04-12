@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 
 // Styling
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Row, Col, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 import '../../styles/css/main.css';
 
 
@@ -16,10 +16,25 @@ class Logout extends React.Component {
         userSession: Session.get('user'),
         errorMessage: '',
         redirect: false,
+        redirectProfile: false,
         sessionEmail : ''
       }
       this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleInput = this.handleInput.bind(this);
 
+    }
+
+    handleInput(e){
+      e.preventDefault();
+      console.log(e.target.value)
+
+      if(e.target.value === "yes"){
+        this.handleSubmit(e)
+      }else{
+        this.setState({
+          redirectProfile:true
+        })
+      }
     }
 
     handleSubmit(e){
@@ -45,17 +60,22 @@ class Logout extends React.Component {
       if(this.state.redirect){
         return <Redirect to='/' />
       }
+      if(this.state.redirectProfile){
+        return <Redirect to='/profile'/>
+      }
       return(
-        <div className="hdo-DivBacking">
+      <div className="hdo-DivBacking">
         <p>Are you sure you would like to Logout?</p>
-        <form onSubmit={this.handleSubmit}>
-          <input className="hda-btn-secondary-default" type="submit" value="Yes"/>
-          <input className="hda-btn-secondary-alert" type="submit" value="No"/>
-
-          {/* padding is off on buttons when they are submit */}
-          {/* <Button className="hda-btn-primary-solid" as="submit" value="Submit">Submit</Button> */}
-
-        </form>
+        <Form onSubmit={this.handleSubmit}>
+          <FormGroup>
+            <Button className="hda-btn-secondary-default" value={"yes"} onClick={this.handleInput}>
+              Yes
+            </Button>
+            <Button className="hda-btn-secondary-alert" value={"no"} onClick={this.handleInput}>
+              No
+            </Button>
+          </FormGroup>
+        </Form>
 
         <p>{this.state.errorMessage}</p>
       </div>
