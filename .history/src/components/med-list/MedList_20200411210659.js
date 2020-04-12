@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import Session from 'react-session-api';
 import ReactModal from 'react-modal';
-import SwipeableViews from 'react-swipeable-views';
 
 // Styling
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -42,7 +41,6 @@ class MedList extends React.Component{
       this.handleOpenDeleteModal = this.handleOpenDeleteModal.bind(this);
       this.handleCloseEditModal = this.handleCloseEditModal.bind(this);
       this.handleCloseDeleteModal = this.handleCloseDeleteModal.bind(this);
-      this.onSwipeChange = this.onSwipeChange.bind(this);
     }
   
     componentDidMount(){
@@ -163,37 +161,23 @@ class MedList extends React.Component{
         })
       })
     }
-
-    onSwipeChange(index, indexLatest, meta){
-      this.setState({
-        swipeIndex: index
-      })
-    }
   
     render(){
       let i =0
       let meds = []
-      console.log(this.state.meds)
-      // console.log(this.state.meds[med])
+      // console.log(this.state.meds)
       for(let med in this.state.meds) {
         meds.push(med)
-
       }
       let medList = meds.map((med) =>
         <li key={i++}>
-          <SwipeableViews enableMouseEvents onChangeIndex={this.onSwipeChange}>
-            <div>
-              <Button className="hda-btn-primary-outline">
-                {med}
-              </Button>
-              {/* MED NOTES */}
-              <p>{this.state.meds[med]}</p>
-            </div>
-            <div>
-              <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(med)}}>Edit</Button>
-              <Button className="hda-btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(med)}}>Delete</Button>
-            </div>
-          </SwipeableViews>
+          <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(meds)}}>
+            {med}
+          </Button>
+          {/* {med} */}
+          {/* {this.state.meds[med]} */}
+          <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(med)}}>Edit</Button>
+          <Button className="hda-btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(med)}}>Delete</Button>
         </li>)
       let modal;
       if(this.state.showAddModal) {

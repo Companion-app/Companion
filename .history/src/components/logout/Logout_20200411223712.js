@@ -16,7 +16,7 @@ class Logout extends React.Component {
         userSession: Session.get('user'),
         errorMessage: '',
         redirect: false,
-        redirectProfile: false,
+        redirectHome: false,
         sessionEmail : ''
       }
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -27,41 +27,40 @@ class Logout extends React.Component {
     handleInput(e){
       e.preventDefault();
       console.log(e.target.value)
-
-      if(e.target.value === "yes"){
-        this.handleSubmit(e)
-      }else{
-        this.setState({
-          redirectProfile:true
-        })
-      }
     }
 
     handleSubmit(e){
       e.preventDefault();
-      axios.post('http://localhost:5000/logout', {
-        withCredentials: true
-      }).then(res => {
-        Session.remove('user');
+      console.log(e.target.value)
+      if(e.target.value === "Yes"){
+        axios.post('http://localhost:5000/logout', {
+          withCredentials: true
+        }).then(res => {
+          Session.remove('user');
 
-        this.setState({
-          redirect: true
-        })
-      }).catch(error=>{
-        if(error.response){
           this.setState({
-            errorMessage: "Sorry, something went wrong. Try again."
+            redirect: true
           })
-        }
-      })
+        }).catch(error=>{
+          if(error.response){
+            this.setState({
+              errorMessage: "Sorry, something went wrong. Try again."
+            })
+          }
+        })
+      }else{
+        this.setState({
+          redirectHome: true
+        })
+      }
     }
 
     render(){
       if(this.state.redirect){
         return <Redirect to='/' />
       }
-      if(this.state.redirectProfile){
-        return <Redirect to='/profile'/>
+      if(this.state.redirectHome){
+        return <Redirect to='/home'/>
       }
       return(
       <div className="hdo-DivBacking">

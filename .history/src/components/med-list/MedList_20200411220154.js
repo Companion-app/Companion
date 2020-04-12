@@ -173,26 +173,20 @@ class MedList extends React.Component{
     render(){
       let i =0
       let meds = []
-      console.log(this.state.meds)
-      // console.log(this.state.meds[med])
+      // console.log(this.state.meds)
       for(let med in this.state.meds) {
         meds.push(med)
-
       }
       let medList = meds.map((med) =>
         <li key={i++}>
           <SwipeableViews enableMouseEvents onChangeIndex={this.onSwipeChange}>
-            <div>
-              <Button className="hda-btn-primary-outline">
-                {med}
-              </Button>
-              {/* MED NOTES */}
-              <p>{this.state.meds[med]}</p>
-            </div>
-            <div>
-              <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(med)}}>Edit</Button>
-              <Button className="hda-btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(med)}}>Delete</Button>
-            </div>
+            <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(meds)}}>
+              {med}
+            </Button>
+            {/* {med} */}
+            {/* {this.state.meds[med]} */}
+            <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(med)}}>Edit</Button>
+            <Button className="hda-btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(med)}}>Delete</Button>
           </SwipeableViews>
         </li>)
       let modal;

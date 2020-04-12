@@ -183,7 +183,7 @@ class MedList extends React.Component{
         <li key={i++}>
           <SwipeableViews enableMouseEvents onChangeIndex={this.onSwipeChange}>
             <div>
-              <Button className="hda-btn-primary-outline">
+              <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(meds)}}>
                 {med}
               </Button>
               {/* MED NOTES */}

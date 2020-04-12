@@ -207,8 +207,6 @@ class MoodList extends React.Component{
           <div>
             <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
               {mood}
-
-              {/* MED NOTES */}
               {this.state.intensity[mood]}
             </Button>
           </div>
@@ -228,7 +226,7 @@ class MoodList extends React.Component{
           <form className="hdo-FormBacking row">
             <div>
               <label htmlFor="add-mood">Mood (max 20 characters) </label>
-              <input className="hda-input-default" type="text" name="add-mood" onChange={this.onAddChange}/>
+              <input className="input-default" type="text" name="add-mood" onChange={this.onAddChange}/>
             </div>
             <div>
               <Button className="hda-btn-secondary-default" onClick={this.submitAdd}>Add</Button>
