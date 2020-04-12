@@ -49,7 +49,7 @@ class Logout extends React.Component {
         <div className="hdo-DivBacking">
         <p>Are you sure you would like to Logout?</p>
         <form onSubmit={this.handleSubmit}>
-          <input className="btn-secondary-default" type="submit" value="Yes"/>
+          <input className="hda-btn-secondary-default" type="submit" value="Yes"/>
           <input className="hda-btn-secondary-alert" type="submit" value="No"/>
 
           {/* padding is off on buttons when they are submit */}

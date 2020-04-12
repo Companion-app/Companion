@@ -1,6 +1,10 @@
 @import '../abstracts/_variables.scss';
 @import '../abstracts/_mixins.scss';
 
+.btn-primary:hover{
+    background-color: $primary-color;
+    border-color: $primary-color;
+}
 .hda-btn-primary-solid {
     @include primary-button-size($primary-button-width, $primary-button-height);
     background-color: $primary-color;
@@ -74,12 +78,9 @@
     background-color: $white;
     border: 3px solid $white;
     color: $primary-color;
-    // box-shadow: 4px 2px 2px $outline-color;
     margin: 6px;
     border-radius: $panel-radius;
-    padding:3px;
+    padding: 4.5rem;
     text-align: center;
-    align-self: auto;
-    // TBD make the text align on the bottom
-    // text-decoration: none;
+
 }

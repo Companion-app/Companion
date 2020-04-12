@@ -1,3 +1,8 @@
+.btn-primary:hover {
+  background-color: #FFB74D;
+  border-color: #FFB74D;
+}
+
 .hda-btn-primary-solid {
   width: 95%;
   height: 50px;
@@ -79,9 +84,8 @@
   color: #FFB74D;
   margin: 6px;
   border-radius: 25px;
-  padding: 3px;
+  padding: 4.5rem;
   text-align: center;
-  align-self: auto;
 }
 
 /*# sourceMappingURL=buttons.css.map */

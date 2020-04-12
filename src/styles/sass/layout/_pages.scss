@@ -11,15 +11,11 @@ body {
     width: 100vw;
     height: 100vh;
     padding: 20px;
-
-    // overflow: hidden;
 }
 
-// still unsure about this method
-// .page-constraint {
-//     max-height: 736px;
-//     position: relative;
-// }
+.hdo-SplashDiv {
+    margin-top: 4rem;
+}
 
 .hdo-DivBacking { 
     background-color: $white;

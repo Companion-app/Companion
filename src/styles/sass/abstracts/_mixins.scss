@@ -15,7 +15,5 @@
 
 @mixin center-text($padding-center-text) {
     text-align: center;
-    align-self: center;
-    margin: 0 auto;
     padding-top: $padding-center-text;
 }
