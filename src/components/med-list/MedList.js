@@ -245,7 +245,7 @@ class MedList extends React.Component{
           contentLabel="Confirm delete med modal">
           <IconContext.Provider value={{size: '2rem', color: 'black'}}>
             <form  className="hdo-DivBacking">
-              <div className="Text">
+              <div className="hda-CenterText">
                 <FaTrash/>
                 <p>Are you sure you want to delete the emotion <strong>{this.state.medSelected}</strong>?</p>
               </div>

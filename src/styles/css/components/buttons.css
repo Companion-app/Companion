@@ -29,6 +29,14 @@
   text-align: center;
 }
 
+.hda-intensity {
+  background-color: #FFB74D;
+  color: #FFFFFF;
+  width: 22px;
+  float: right;
+  border-radius: 60%;
+}
+
 .hda-btn-primary-outline {
   width: 95%;
   height: 50px;
