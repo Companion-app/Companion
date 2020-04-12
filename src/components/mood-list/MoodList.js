@@ -204,23 +204,23 @@ class MoodList extends React.Component{
       let moodList = moods.map((mood) =>
         <li key={i++}>
           <SwipeableViews enableMouseEvents onChangeIndex={this.onSwipeChange}>
-          <div>
+          <div style={Object.assign({})}>
               <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
-              <Row>
+              {mood}
+              <span style={{float: 'right'}}>{this.state.intensity[mood]}</span>
+                
+                {/* <Row>
+                  <Col xs={10} className="pl-5 pr-0">
+                    {mood}
+                  </Col>
 
-                <Col xs={10} className="pl-5 pr-0">
-                  {mood}
-                </Col>
-
-                {/* MOOD INTENSITY */}
-
-                <Col xs={2} className="pl-0">
-                  {this.state.intensity[mood]}
-                </Col>
-                </Row>
+                  <Col xs={2} className="pl-0">
+                    {this.state.intensity[mood]}
+                  </Col>
+                </Row> */}
               </Button>
           </div>
-          <div>
+          <div style={Object.assign({})}>
             <Button className="hda-btn-secondary-edit" onClick={() => {this.handleOpenEditModal(mood)}}>Edit</Button>
             <Button className="hda-btn-secondary-alert" onClick={() => {this.handleOpenDeleteModal(mood)}}>Delete</Button>
           </div>
