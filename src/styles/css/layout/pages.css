@@ -1,0 +1,71 @@
+body {
+  background-color: #57A7F1;
+  margin-left: 0;
+}
+
+.hdt-SplashBacking {
+  background: #3387f1;
+  background: linear-gradient(180deg, #3387f1 0%, #3ab3fd 100%);
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+}
+
+.hdo-SplashDiv {
+  margin-top: 4rem;
+}
+
+.hdo-DivBacking {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px;
+  color: black;
+}
+
+.hdo-SplashBacking {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.hda-DivHeading {
+  padding-top: 10px;
+  padding-left: 15px;
+  color: #FFFFFF;
+}
+
+.hda-CenterText {
+  text-align: center;
+  padding-top: 30px;
+  padding: 10px;
+}
+
+.hdt-ModalBacking {
+  background-color: #57A7F1;
+  padding: 30px;
+  height: 90vh;
+  margin: 2px;
+}
+
+.hdo-FormBacking {
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.hdo-padding {
+  padding: 5px;
+}
+
+.hdp-bottom-padding {
+  padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 375px) {
+  .hdo-FormBacking {
+    padding: 50px;
+  }
+}
+
+/*# sourceMappingURL=pages.css.map */

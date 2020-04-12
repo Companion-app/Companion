@@ -1,0 +1,19 @@
+@mixin primary-button-size($primary-button-width, $primary-button-height) {
+    width: $primary-button-width;
+    height: $primary-button-height;
+}
+
+@mixin secondary-button-size($primary-button-width, $primary-button-height) {
+    width: $primary-button-width;
+    height: $primary-button-height;
+}
+
+@mixin panel-size($panel-width, $panel-height) {
+    width: $panel-width;
+    height: $panel-height;
+}
+
+@mixin center-text($padding-center-text) {
+    text-align: center;
+    padding-top: $padding-center-text;
+}
