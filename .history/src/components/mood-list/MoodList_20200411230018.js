@@ -207,7 +207,7 @@ class MoodList extends React.Component{
           <div>
             <Button className="hda-btn-primary-outline" onClick={()=> {this.handleOpenIntensityModal(mood)}}>
               {mood}
-              {this.state.intensity[mood]}
+              {this.state.intensity['mood']}
             </Button>
           </div>
           <div>
