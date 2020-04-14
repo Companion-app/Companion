@@ -10,13 +10,13 @@ import {
 } from 'react-router-dom';
 import Session from 'react-session-api';
 import ReactModal from 'react-modal';
-import Profile from '../profile/Profile.js';
+import Profile from '../profile/profile.js';
 import MoodList from '../mood-list/MoodList.js';
 import MedList from '../med-list/MedList.js';
 import Register from '../register/Register.js';
 import LogIn from '../login/LogIn.js';
 import Logout from '../logout/Logout.js';
-import Navbar from '../navbar/Navbar.js';
+import Navbar from '../navbar/navbar.js';
 import Home from '../home/Home.js';
 import Splash from '../splash/Splash.js';
 
