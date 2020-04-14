@@ -247,7 +247,7 @@ class MedList extends React.Component{
             <form  className="hdo-DivBacking">
               <div className="hda-CenterText">
                 <FaTrash/>
-                <p>Are you sure you want to delete the emotion <strong>{this.state.medSelected}</strong>?</p>
+                <p>Are you sure you want to delete the medication <strong>{this.state.medSelected}</strong>?</p>
               </div>
               <div className="hda-CenterText">
                 <Button className="hda-btn-secondary-default" onClick={this.submitConfirmDelete}>Accept</Button>
