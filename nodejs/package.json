@@ -1,8 +1,8 @@
 {
-  "name": "Companion-app",
+  "name": "companion",
   "version": "1.0.0",
   "description": "",
-  "main": "app-copy.js",
+  "main": "app.js",
   "directories": {
     "test": "test"
   },
