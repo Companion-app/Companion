@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
+  "engines": {
+    "node":"v12.14.1"
+  },
   "directories": {
     "test": "test"
   },
