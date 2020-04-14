@@ -22,7 +22,15 @@ class Home extends React.Component{
         super()
         this.state = {
             userSession: Session.get('user'),
-            moodSelectedByUser: [],
+            moodSelectedByUser: [
+                { x: "S", y: 5 },
+                { x: "M", y: 2 },
+                { x: "T", y: 3 },
+                { x: "W", y: 4 },
+                { x: "T", y: 2 },
+                { x: "F", y: 5 },
+                { x: "SA", y: 1 }
+            ],
                 anger: [
                     { x: "S", y: 5 },
                     { x: "M", y: 2 },
