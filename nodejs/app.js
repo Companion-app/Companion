@@ -17,7 +17,7 @@ app.use(session({
   saveUninitialized: true
 }))
 
-MongoClient.connect('mongodb+srv://User2:a1QaehxEiQl0xSts@companion-okgix.azure.mongodb.net', (err, client) => {
+MongoClient.connect('', (err, client) => {
   if (err) return console.log(err);
   db = client.db('Companion'); //Sets the database to work with
 })
